@@ -1,0 +1,316 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+#cover {
+  padding: 0 12.5%;
+  height: 75vh;
+  background-color: #fff;
+}
+
+#cover:before {
+  content: "";
+  display: inline-block;
+  height: 70vh;
+  vertical-align: middle;
+}
+
+#cover > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#cover h1 {
+  font-size: 72px;
+  font-weight: 500;
+  color: #030303;
+  letter-spacing: 5px;
+}
+
+#cover h3 {
+  font-size: 32px;
+  font-weight: 100;
+  color: #222222;
+  letter-spacing: 4px;
+}
+
+#services {
+  padding: 32px 12.5% 27px;
+  background-color: #fff;
+  position: relative;
+}
+
+#services > p, #projects > p, #about > p {
+  font-size: 72px;
+  font-weight: 900;
+  color: #000000;
+}
+
+.service {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.service > div {
+  width: 69%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.service > div h2 {
+  font-size: 32px;
+  font-weight: 300;
+  color: #000000;
+  margin: 0 0 14px 16px;
+}
+
+.service > div p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #000000;
+}
+
+.service img {
+  width: 30%;
+  vertical-align: middle;
+}
+
+#projects {
+  padding: 152px 12.5% 73px;
+}
+
+.project, .article {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.article {
+  margin-top: 60px;
+}
+
+.web, .app {
+  display: inline-block;
+}
+
+.project h4, .article h4 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #0f0f0f;
+  margin-bottom: 14px;
+}
+
+.project p, .article p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e95036;
+}
+
+.project p {
+  margin-top: 13px;
+}
+
+.article p {
+  margin-top: 5px;
+}
+
+.article h3 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #0f0f0f;
+  margin-top: 13px;
+}
+
+#about {
+  padding: 80px 12.5% 136px;
+  background-color: #fff;
+}
+
+.belief, .members {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.belief {
+  margin-top: 64px;
+}
+
+.members {
+  margin-top: 91px;
+}
+
+.belief h4, .members h4 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #e95036;
+}
+
+.belief h4 {
+  margin-bottom: 17px;
+}
+
+.members h4 {
+  margin-bottom: 32px;
+}
+
+.belief p {
+  font-size: 14px;
+  font-weight: 300;
+  color: #000000;
+}
+
+.members-intro {
+  display: flex;
+  justify-content: space-between;
+}
+
+.member {
+  display: inline-block;
+}
+
+.member p:nth-child(2) {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e95036;
+  margin-top: 14px;
+}
+
+.member p:nth-child(3) {
+  font-size: 14px;
+  font-weight: 300;
+  color: #000000;
+  margin-top: 4px;
+}
+
+footer {
+  height: 481px;
+  display: flex;
+  justify-content: center;
+}
+
+footer > div {
+  width: 50%;
+  padding-top: 87px;
+}
+
+footer > div:nth-child(1) {
+  padding-left: 12.5%;
+}
+
+footer > div:nth-child(2) {
+  padding-right: 12.5%;
+  padding-left: 10%;
+}
+
+footer > div img {
+  vertical-align: middle;
+}
+
+footer h3 {
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 2.2px;
+  color: #030303;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.contact-info h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e95036;
+  margin: 44px 0 19px;
+}
+
+.contact-info > div:nth-child(3) {
+  margin: 15px 0 21px;
+}
+
+.contact-info > div img {
+  width: 27px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.contact-info > div p {
+  font-size: 16px;
+  color: #626262;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.contact-info > img {
+  width: 40px;
+  margin-right: 18px;
+}
+
+.contact-form {
+  background-image: url("./images/formBg.png");
+  background-size: cover;
+}
+
+.contact-form h5 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  margin-left: 16px;
+}
+
+.contact-form form ::placeholder {
+  font-size: 14px;
+  font-weight: bold;
+  color: #cecac9;;
+}
+
+.contact-form form input {
+  width: 300px;
+  height: 40px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 24px;
+  margin-top: 24px;
+  display: block;
+  outline: none;
+}
+
+.contact-form form textarea {
+  width: 300px;
+  height: 96px;
+  padding: 12px 16px;
+  resize: none;
+  border: none;
+  border-radius: 24px;
+  margin-top: 16px;
+  display: block;
+  outline: none;
+}
+
+.contact-form form button {
+  width: 300px;
+  height: 40px;
+  border: none;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #e95036;
+  margin-top: 16px;
+  display: block;
+  outline: none;
+}
