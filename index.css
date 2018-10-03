@@ -13,6 +13,14 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
+#project-intro {
+  display: none;
+}
+
 #cover {
   padding: 0 12.5%;
   height: 75vh;
@@ -210,31 +218,31 @@ h1, h2, h3, h4, h5, h6, p {
   margin-top: 4px;
 }
 
-footer {
+#home-footer {
   height: 481px;
   display: flex;
   justify-content: center;
 }
 
-footer > div {
+#home-footer > div {
   width: 50%;
   padding-top: 87px;
 }
 
-footer > div:nth-child(1) {
+#home-footer > div:nth-child(1) {
   padding-left: 12.5%;
 }
 
-footer > div:nth-child(2) {
+#home-footer > div:nth-child(2) {
   padding-right: 12.5%;
   padding-left: 10%;
 }
 
-footer > div img {
+#home-footer > div img {
   vertical-align: middle;
 }
 
-footer h3 {
+#home-footer h3 {
   font-size: 32px;
   font-weight: 500;
   letter-spacing: 2.2px;
@@ -277,20 +285,23 @@ footer h3 {
   background-size: cover;
 }
 
-.contact-form h5 {
+.contact-form h5, #contact h5 {
   font-size: 24px;
   font-weight: 500;
   color: #fff;
+}
+
+.contact-form h5 {
   margin-left: 16px;
 }
 
-.contact-form form ::placeholder {
+.contact-form form ::placeholder, #contact form ::placeholder {
   font-size: 14px;
   font-weight: bold;
   color: #cecac9;;
 }
 
-.contact-form form input {
+.contact-form form input, #contact form input {
   width: 300px;
   height: 40px;
   padding: 0 16px;
@@ -301,7 +312,7 @@ footer h3 {
   outline: none;
 }
 
-.contact-form form textarea {
+.contact-form form textarea, #contact form textarea {
   width: 300px;
   height: 96px;
   padding: 12px 16px;
@@ -313,7 +324,7 @@ footer h3 {
   outline: none;
 }
 
-.contact-form form button {
+.contact-form form button, #contact form button {
   width: 300px;
   height: 40px;
   border: none;
@@ -325,4 +336,182 @@ footer h3 {
   margin-top: 16px;
   display: block;
   outline: none;
+}
+
+/*專案文章*/
+
+#top {
+  padding: 24px 32px;
+  background-color: #fff;
+}
+
+#top img {
+  margin-right: 17px;
+  vertical-align: middle;
+}
+
+#top h3 {
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 2.2px;
+  color: #030303;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#project-cover {
+  padding: 48px 122px;
+}
+
+#project-cover h1 {
+  font-size: 32px;
+  font-weight: 900;
+  color: #000000;
+  margin-left: 20px;
+  margin-bottom: 24px;
+}
+
+#project-cover h1 span {
+  font-size: 32px;
+  font-weight: normal;
+  color: #0f0f0f;
+  margin-left: 16px;
+}
+
+#project-cover img {
+  margin-bottom: 24px;
+}
+
+#project-cover h3 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #0f0f0f;
+  margin-bottom: 13px;
+}
+
+#project-cover p {
+  font-size: 24px;
+  color: #000000;
+  margin-bottom: 24px;
+}
+
+#project-cover a, .medium a {
+  width: 300px;
+  height: 48px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  display: block;
+  line-height: 48px;
+  text-align: center;
+  border-radius: 24px;
+  margin: 0 auto;
+}
+
+#project-cover a, .medium a:nth-child(5) {
+  background-color: #e95036;
+}
+
+.medium a:nth-child(4) {
+  background-color: #313131;
+}
+
+#project-content {
+  padding: 48px 198px;
+  background-color: #fff;
+  position: relative;
+}
+
+#project-content > div {
+  margin-bottom: 48px;
+}
+
+#project-content h4 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000000;
+}
+
+#project-content p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #000000;
+}
+
+#project-content .medium h4 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #0f0f0f;
+  margin-bottom: 24px;
+}
+
+.medium img {
+  margin-bottom: 16px;
+}
+
+.medium h3 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #0f0f0f;
+  margin-bottom: 49px;
+}
+
+.medium a {
+  display: inline-block;
+}
+
+#project-content a.back-arrow, #project-content a.next-arrow {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e95036;
+}
+
+#project-content a.next-arrow {
+  position: absolute;
+  bottom: 48px;
+  right: 198px;
+}
+
+#contact {
+  height: 399px;
+  background-color: #313131;
+  text-align: center;
+  padding-top: 48px;
+}
+
+#contact form {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+#project-footer {
+  padding: 30px;
+  text-align: center
+}
+
+#project-footer > div {
+  margin-bottom: 12px;
+}
+
+#project-footer img:nth-child(1) {
+  vertical-align: middle;
+}
+
+#project-footer h6 {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1.3px;
+  color: #030303;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#project-footer p {
+  font-size: 16px;
+  color: #db3324;
+  margin-bottom: 8px;
+}
+
+#project-footer img {
+  width: 26px;
 }
