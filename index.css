@@ -58,14 +58,26 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .service {
-  width: 90%;
-  margin: 0 auto;
+  padding: 0 5%;
+  margin: 100px auto 0;
 }
 
 .service > div {
   width: 69%;
   display: inline-block;
   vertical-align: middle;
+}
+
+.service:nth-child(2) {
+  background-image: url('./images/01.png');
+  background-size: 17vh;
+  background-repeat: no-repeat;
+}
+
+.service:nth-child(4) {
+  background-image: url('./images/03.png');
+  background-size: 17vh;
+  background-repeat: no-repeat;
 }
 
 .service > div h2 {
@@ -81,7 +93,7 @@ h1, h2, h3, h4, h5, h6, p {
   color: #000000;
 }
 
-.service img {
+.service > img {
   width: 30%;
   vertical-align: middle;
 }
