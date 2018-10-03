@@ -330,8 +330,6 @@ a {
 }
 
 .contact-form form input, #contact form input {
-  width: 35vw;
-  max-width: 300px;
   height: 40px;
   padding: 0 16px;
   border: none;
@@ -342,8 +340,6 @@ a {
 }
 
 .contact-form form textarea, #contact form textarea {
-  width: 35vw;
-  max-width: 300px;
   height: 96px;
   padding: 12px 16px;
   resize: none;
@@ -355,8 +351,6 @@ a {
 }
 
 .contact-form form button, #contact form button {
-  width: 35vw;
-  max-width: 300px;
   height: 40px;
   border: none;
   border-radius: 24px;
@@ -367,6 +361,11 @@ a {
   margin-top: 16px;
   display: block;
   outline: none;
+}
+
+.contact-form form input, .contact-form form textarea, .contact-form form button {
+  width: 35vw;
+  max-width: 300px;
 }
 
 /*專案文章*/
@@ -391,7 +390,7 @@ a {
 }
 
 #project-cover {
-  padding: 48px 122px;
+  padding: 48px 15vw;
 }
 
 #project-cover h1 {
@@ -400,9 +399,10 @@ a {
   color: #000000;
   margin-left: 20px;
   margin-bottom: 24px;
+  display: inline-block;
 }
 
-#project-cover h1 span {
+#project-cover span {
   font-size: 32px;
   font-weight: normal;
   color: #0f0f0f;
@@ -410,6 +410,7 @@ a {
 }
 
 #project-cover img {
+  width: 100%;
   margin-bottom: 24px;
 }
 
@@ -439,16 +440,16 @@ a {
   margin: 0 auto;
 }
 
-#project-cover a, .medium a:nth-child(5) {
+#project-cover a, .medium > div a:nth-child(2) {
   background-color: #e95036;
 }
 
-.medium a:nth-child(4) {
+.medium > div a:nth-child(1) {
   background-color: #313131;
 }
 
 #project-content {
-  padding: 48px 198px;
+  padding: 48px 20vw;
   background-color: #fff;
   position: relative;
 }
@@ -477,6 +478,7 @@ a {
 }
 
 .medium img {
+  width: 100%;
   margin-bottom: 16px;
 }
 
@@ -487,8 +489,14 @@ a {
   margin-bottom: 49px;
 }
 
+.medium > div {
+  display: flex;
+  justify-content: space-between;
+}
+
 .medium a {
-  display: inline-block;
+  width: 47%;
+  max-width: 300px;
 }
 
 #project-content a.back-arrow, #project-content a.next-arrow {
@@ -500,7 +508,7 @@ a {
 #project-content a.next-arrow {
   position: absolute;
   bottom: 48px;
-  right: 198px;
+  right: 20vw;
 }
 
 #contact {
@@ -513,6 +521,10 @@ a {
 #contact form {
   display: inline-block;
   margin: 0 auto;
+}
+
+#contact form input, #contact form textarea, #contact form button {
+  width: 300px;
 }
 
 #project-footer {
@@ -729,5 +741,78 @@ a {
 
   .contact-info img {
     margin-right: 10px;
+  }
+
+  /*專案文章*/
+  #top {
+    height: 48px;
+    line-height: 48px;
+    padding: 0 16px;
+  }
+
+  #top h3 {
+    font-size: 24px;
+    letter-spacing: 1.7px;
+  }
+
+  #project-cover {
+    padding: 48px 8.5vw;
+  }
+
+  #project-cover h1 {
+    margin-bottom: 0;
+  }
+
+  #project-cover img {
+    margin: 24px 0;
+  }
+
+  #project-cover a {
+    width: 100%;
+  }
+
+  #project-content {
+    padding: 48px 8.5vw;
+  }
+
+  .medium h3 {
+    margin-bottom: 25px;
+  }
+
+  .medium > div {
+    display: block;
+  }
+
+  .medium a {
+    width: 100%;
+  }
+
+  .medium a:nth-child(1) {
+    margin-bottom: 16px;
+  }
+
+  #project-content a.next-arrow {
+    right: 8.5vw;
+  }
+
+  #contact {
+    padding: 48px 8.5vw 39px;
+  }
+
+  #contact form {
+    display: block;
+  }
+
+  .contact-form form input, #contact form input {
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  .contact-form form textarea, #contact form textarea {
+    width: 100%;
+  }
+
+  .contact-form form button, #contact form button {
+    width: 100%;
   }
 }
