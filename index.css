@@ -30,7 +30,7 @@ a {
 #cover:before {
   content: "";
   display: inline-block;
-  height: 70vh;
+  height: 65vh;
   vertical-align: middle;
 }
 
@@ -102,7 +102,7 @@ a {
 }
 
 .service > img {
-  width: 30%;
+  width: 29%;
   vertical-align: middle;
 }
 
@@ -127,7 +127,6 @@ a {
 
 .web, .app {
   width: 42%;
-  display: inline-block;
   background-image: url('./images/dot.png');
   background-size: 139px;
   background-repeat: no-repeat;
@@ -215,7 +214,6 @@ a {
 
 .member {
   width: 43%;
-  display: inline-block;
   background-image: url('./images/dot.png');
   background-size: 139px;
   background-repeat: no-repeat;
@@ -550,9 +548,150 @@ a {
 }
 
 
-/*手機版*/
+/*-------------手機版-------------*/
 
 @media only screen and (max-width: 430px) {
+  #cover h1 {
+    font-size: 32px;
+  }
+
+  #cover h3 {
+    font-size: 14px;
+  }
+
+  #services > p, #projects > p, #about > p {
+    font-size: 32px;
+  }
+
+  #services {
+    padding: 48px 8.5vw;
+  }
+
+  .service {
+    margin: 5vh auto 0;
+    padding: 7vh 0 0;
+    position: relative;
+  }
+
+  .service > div {
+    width: 100%;
+  }
+
+  .service > div h2 {
+    font-size: 24px;
+  }
+
+  .service:nth-child(2) > div::after {
+    content: "";
+    width: 240px;
+    height: 240px;
+    background-image: url('./images/workshop.gif');
+    background-repeat: no-repeat;
+    background-size: 240px;
+    background-position: right;
+    margin: 16px auto 0;
+    display: block;
+  }
+
+  .service:nth-child(3) > div::after {
+    content: "";
+    width: 240px;
+    height: 240px;
+    background-image: url('./images/drawing.gif');
+    background-repeat: no-repeat;
+    background-size: 240px;
+    background-position: right;
+    margin: 16px auto 0;
+    display: block;
+  }
+
+  .service:nth-child(4) > div::after {
+    content: "";
+    width: 240px;
+    height: 240px;
+    background-image: url('./images/digging.gif');
+    background-repeat: no-repeat;
+    background-size: 240px;
+    background-position: right;
+    margin: 16px auto 0;
+    display: block;
+  }
+
+  .service:nth-child(5) > div::after {
+    content: "";
+    width: 240px;
+    height: 240px;
+    background-image: url('./images/interviewing.gif');
+    background-repeat: no-repeat;
+    background-size: 240px;
+    background-position: right;
+    margin: 16px auto 0;
+    display: block;
+  }
+
+  .service > img {
+    display: none;
+  }
+
+  #projects {
+    padding: 84px 8.5vw 48px;
+  }
+
+  .project {
+    width: 100%;
+    display: block;
+    margin: 68px 0 0;
+  }
+
+  .web, .app {
+    width: 100%;
+  }
+
+  .app, .article {
+    margin-top: 48px;
+  }
+
+  .web img, .app img {
+    width: 64vw;
+  }
+
+  .article {
+    width: 100%;
+  }
+
+  .article h3 {
+    font-size: 16px;
+  }
+
+  #about {
+    padding: 48px 8.5vw;
+  }
+
+  .belief, .members {
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .members h4 {
+    margin-bottom: 24px;
+  }
+
+  .members-intro {
+    display: block;
+  }
+
+  .member {
+    width: 100%;
+  }
+
+  .member img {
+    width: 58vw;
+  }
+
+  .member:nth-child(2) {
+    margin-top: 48px;
+  }
+
   #home-footer {
     height: 851px;
     display: block;
@@ -565,8 +704,8 @@ a {
 
   #home-footer .contact-form {
     padding: 48px 0;
-    padding-right: 32px;
-    padding-left: 32px;
+    padding-right: 8.5vw;
+    padding-left: 8.5vw;
     background-color: #303030;
   }
 
@@ -585,7 +724,7 @@ a {
     height: 426px;
     position: absolute;
     bottom: 0;
-    padding: 64px 32px;
+    padding: 64px 8.5vw;
   }
 
   .contact-info img {
