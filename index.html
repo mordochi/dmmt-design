@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <div id="snackbar"></div>
     <div id="home">
       <div id="cover">
         <div>
@@ -135,10 +136,10 @@
         <div class="contact-form">
           <h5>留下資料讓我們跟你聯絡</h5>
           <form onsubmit="return false">
-            <input type="text" placeholder="Name">
-            <input type="text" placeholder="Email">
-            <textarea placeholder="Massage…"></textarea>
-            <button type="submit">Submit</button>
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="email" placeholder="Email">
+            <textarea name="message" placeholder="Message…"></textarea>
+            <button type="submit" onclick="submitForm()">Submit</button>
           </form>
         </div>
       </footer>
@@ -191,10 +192,10 @@
       <div id="contact">
         <h5>留下資料讓我們跟你聯絡</h5>
         <form onsubmit="return false">
-          <input type="text" placeholder="Name">
-          <input type="text" placeholder="Email">
-          <textarea placeholder="Massage…"></textarea>
-          <button type="submit">Submit</button>
+          <input type="text" name="name" placeholder="Name">
+          <input type="text" name="email" placeholder="Email">
+          <textarea name="message" placeholder="Message…"></textarea>
+          <button type="submit" onclick="submitForm()">Submit</button>
         </form>
       </div>
 
@@ -209,5 +210,7 @@
         <img src="./images/medium.png" alt="medium">
       </footer>
     </div>
+
+    <script type="text/javascript" src="./index.js"></script>
   </body>
 </html>
