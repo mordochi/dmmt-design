@@ -74,21 +74,23 @@ function submitForm () {
   }
 }
 
+function moveIt(beMoved) {
+  let speed = beMoved.getAttribute('data-scroll-speed');
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+  beMoved.style.setProperty('transform', 'translateY(' + -(scrollTop / speed) + 'px)');
+}
 
 (function() {
+  AOS.init();
+
+  window.addEventListener('scroll', function(){
+    let items = document.querySelectorAll('[data-scroll-speed]');
+    for(let i = 0; i < items.length; i++) {
+      moveIt(items[i]);
+      let scrollTop = items[i].scrollTop;
+    }
+  });
 
 })();
-
-
-
-//https://slack.com/api/chat.postMessage?token=xoxp-397902154451-443441458816-449015804034-fad3b87eaa83e2045e400116ed2c7bb5&channel=CBP9F9X7A&text=name&attachments=%255B%257B%2522pretext%2522%253A%2520%2522email%2522%252C%2520%2522text%2522%253A%2520%2522message%2522%257D%255D
-//https://slack.com/api/chat.postMessage?token=xoxp-397902154451-443441458816-449015804034-fad3b87eaa83e2045e400116ed2c7bb5&channel=CBP9F9X7A&text=name&attachments=%5B%7B%22pretext%22%3A%20%22email%22%2C%20%22text%22%3A%20%22text%22%7D%5D&pretty=1
-
-
-
-
-
-
-
-
 

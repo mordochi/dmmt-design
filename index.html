@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <link rel="stylesheet" type="text/css" href="./index.css">
 
     <title>無想設計</title>
   </head>
 
-  <body>
+  <body >
     <div id="snackbar"></div>
     <div id="home">
       <nav>
@@ -29,44 +32,50 @@
           <a href="#home-footer">Contact</a>
         </div>
       </nav>
+
       <div id="cover">
         <div>
-          <img src="https://fakeimg.pl/50x50/cecece/?text=logo" alt="logo">
-          <h1>無想設計</h1>
-          <h3>始於設計 止於無想</h3>
+          <img src="https://fakeimg.pl/50x50/cecece/?text=logo" alt="logo" data-scroll-speed="1">
+          <h1 data-scroll-speed="2">無想設計</h1>
+          <h3 data-scroll-speed="4">始於設計 止於無想</h3>
         </div>
       </div>
 
       <div id="services">
-        <p>Our services</p>
+        <p data-scroll-speed="9" class="section-title">Our services</p>
 
-        <div class="service">
-          <div>
+        <div class="service" data-scroll-speed="5">
+          <div data-scroll-speed="11">
             <h2>kick-off 工作坊</h2>
             <p>在工作坊中，依據不同的產業，我們選擇適合的設計思考方式，一起重新審視產品、優化現在的工作流程以及評估未來潛在的挑戰，最後歸納出可能的解決方案。</p>
           </div>
           <img src="./images/workshop.gif" alt="workshop" class="gif">
         </div>
 
-        <div class="service">
-          <img src="./images/drawing.gif" alt="design" class="gif">
-          <div>
-            <h2>使用者介面設計</h2>
-            <p>首先我們會針對使用者習慣和使用情境，討論適合的介面。接著我們會一起討論內容的規格以及先後順序，決定版面的配置，完成設計原型。第三部份我們會一起討論風格和靜態畫面細節。最後是元件動態的安排以及介面互動實作，完成設計稿。</p>
+        <div class="service" data-aos="fade-up" data-aos-once="true" data-aos-duration="800">
+          <div  data-scroll-speed="7">
+            <img src="./images/drawing.gif" alt="design" class="gif">
+            <div>
+              <h2>使用者介面設計</h2>
+              <p>首先我們會針對使用者習慣和使用情境，討論適合的介面。接著我們會一起討論內容的規格以及先後順序，決定版面的配置，完成設計原型。第三部份我們會一起討論風格和靜態畫面細節。最後是元件動態的安排以及介面互動實作，完成設計稿。</p>
+            </div>
           </div>
         </div>
 
-        <div class="service">
+        <div class="service" data-scroll-speed="8">
           <div>
             <h2>介面開發與建置</h2>
             <p>依照上一階段完成的設計稿，完整的實作到介面。 </p>
           </div>
-          <img src="./images/digging.gif" alt="develop" class="gif">
+
+          <div data-aos="fade-up" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" class="gif-div">
+            <img src="./images/digging.gif" alt="develop" class="gif" >
+          </div>
         </div>
 
-        <div class="service">
+        <div class="service" data-scroll-speed="10">
           <img src="./images/interviewing.gif" alt="interview" class="gif">
-          <div>
+          <div data-aos="fade-up" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
             <h2>結案訪談</h2>
             <p>新介面使用心得分享與討論，簡單的訪談專案進行過程，產出結案報告。</p>
           </div>
@@ -74,9 +83,11 @@
       </div>
 
       <div id="projects">
-        <p>Featured Projects</p>
+        <div data-aos="zoom-in-up" data-aos-once="true" data-aos-easing="ease-out" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
+          <p class="section-title">Featured Projects</p>
+        </div>
 
-        <div class="project">
+        <div class="project" data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
           <div class="web">
             <h4>Websites</h4>
             <img src="./images/web.png" alt="websites">
@@ -99,14 +110,14 @@
       </div>
 
       <div id="about">
-        <p>About us</p>
+        <p class="section-title" data-aos="fade-down" data-aos-once="true" data-aos-duration="1700" data-aos-offset="200">About us</p>
 
         <div class="belief">
           <h4>核心理念</h4>
           <p>秉著貼近人性的角度出發，希望帶給人們的不只是形式上的科技產物；而是能夠將您腦中的想法，以最有溫度的方式傳遞到受眾手中。</p>
         </div>
 
-        <div class="members">
+        <div class="members"data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
           <h4>團隊成員</h4>
 
           <div class="members-intro">
