@@ -72,7 +72,7 @@ nav {
 
 /*home*/
 
-#project-intro {
+#web-intro, #app-intro {
   display: none;
 }
 
@@ -125,7 +125,7 @@ nav {
   margin: 100px auto 0;
 }
 
-.service > div:not(.gif-div) {
+.service-text {
   width: 69%;
   display: inline-block;
   vertical-align: middle;
@@ -377,7 +377,7 @@ nav {
   background-size: cover;
 }
 
-.contact-form h5, #contact h5 {
+.contact-form h5, #web-contact h5, #app-contact h5 {
   font-size: 24px;
   font-weight: 500;
   color: #fff;
@@ -387,13 +387,13 @@ nav {
   margin-left: 16px;
 }
 
-.contact-form form ::placeholder, #contact form ::placeholder {
+.contact-form form ::placeholder, #web-contact form ::placeholder, #app-contact form ::placeholder {
   font-size: 14px;
   font-weight: bold;
   color: #cecac9;;
 }
 
-.contact-form form input, #contact form input {
+.contact-form form input, #web-contact form input, #app-contact form input {
   height: 40px;
   padding: 0 16px;
   border: none;
@@ -403,7 +403,7 @@ nav {
   outline: none;
 }
 
-.contact-form form textarea, #contact form textarea {
+.contact-form form textarea, #web-contact form textarea, #app-contact form textarea {
   height: 96px;
   padding: 12px 16px;
   resize: none;
@@ -414,7 +414,7 @@ nav {
   outline: none;
 }
 
-.contact-form form button, #contact form button {
+.contact-form form button, #web-contact form button, #app-contact form button {
   height: 40px;
   border: none;
   border-radius: 24px;
@@ -434,17 +434,17 @@ nav {
 
 /*專案文章*/
 
-#top {
+#web-top, #app-top {
   padding: 24px 32px;
   background-color: #fff;
 }
 
-#top img {
+#web-top img, #app-top img {
   margin-right: 17px;
   vertical-align: middle;
 }
 
-#top h3 {
+#web-top h3, #app-top h3 {
   font-size: 32px;
   font-weight: 300;
   letter-spacing: 2.2px;
@@ -453,11 +453,11 @@ nav {
   vertical-align: middle;
 }
 
-#project-cover {
+#web-cover, #app-cover {
   padding: 48px 15vw;
 }
 
-#project-cover h1 {
+#web-cover h1, #app-cover h1 {
   font-size: 32px;
   font-weight: 900;
   color: #000000;
@@ -466,32 +466,32 @@ nav {
   display: inline-block;
 }
 
-#project-cover span {
+#web-cover span, #app-cover span {
   font-size: 32px;
   font-weight: normal;
   color: #0f0f0f;
   margin-left: 16px;
 }
 
-#project-cover img {
+#web-cover img, #app-cover img {
   width: 100%;
   margin-bottom: 24px;
 }
 
-#project-cover h3 {
+#web-cover h3, #app-cover h3 {
   font-size: 32px;
   font-weight: 500;
   color: #0f0f0f;
   margin-bottom: 13px;
 }
 
-#project-cover p {
+#web-cover p, #app-cover p {
   font-size: 24px;
   color: #000000;
   margin-bottom: 24px;
 }
 
-#project-cover a, .medium a {
+#web-cover a, #app-cover a, .medium a {
   width: 300px;
   height: 48px;
   font-size: 14px;
@@ -504,7 +504,7 @@ nav {
   margin: 0 auto;
 }
 
-#project-cover a, .medium > div a:nth-child(2) {
+#web-cover a, #app-cover a, .medium > div a:nth-child(2) {
   background-color: #e95036;
 }
 
@@ -512,29 +512,29 @@ nav {
   background-color: #313131;
 }
 
-#project-content {
+#web-content, #app-content {
   padding: 48px 20vw;
   background-color: #fff;
   position: relative;
 }
 
-#project-content > div {
+#web-content > div, #app-content > div {
   margin-bottom: 48px;
 }
 
-#project-content h4 {
+#web-content h4, #app-content h4 {
   font-size: 24px;
   font-weight: 500;
   color: #000000;
 }
 
-#project-content p {
+#web-content p, #app-content p {
   font-size: 16px;
   font-weight: 300;
   color: #000000;
 }
 
-#project-content .medium h4 {
+#web-content .medium h4, #app-content .medium h4 {
   font-size: 32px;
   font-weight: 500;
   color: #0f0f0f;
@@ -563,48 +563,49 @@ nav {
   max-width: 300px;
 }
 
-#project-content a.back-arrow, #project-content a.next-arrow {
+#web-content a.back-arrow, #web-content a.next-arrow, #app-content a.back-arrow, #app-content a.next-arrow {
   font-size: 18px;
   font-weight: bold;
   color: #e95036;
 }
 
-#project-content a.next-arrow {
+#web-content a.next-arrow, #app-content a.next-arrow {
   position: absolute;
-  bottom: 48px;
-  right: 20vw;
+  bottom: 0;
+  right: 0;
 }
 
-#contact {
+#web-contact, #app-contact {
   height: 399px;
   background-color: #313131;
   text-align: center;
   padding-top: 48px;
 }
 
-#contact form {
+#web-contact form, #app-contact form {
   display: inline-block;
   margin: 0 auto;
 }
 
-#contact form input, #contact form textarea, #contact form button {
+#web-contact form input, #web-contact form textarea, #web-contact form button,
+#app-contact form input, #app-contact form textarea, #app-contact form button {
   width: 300px;
 }
 
-#project-footer {
+#web-footer, #app-footer {
   padding: 30px;
   text-align: center
 }
 
-#project-footer > div {
+#web-footer > div, #app-footer > div {
   margin-bottom: 12px;
 }
 
-#project-footer img:nth-child(1) {
+#web-footer img:nth-child(1), #app-footer img:nth-child(1) {
   vertical-align: middle;
 }
 
-#project-footer h6 {
+#web-footer h6, #app-footer h6 {
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 1.3px;
@@ -613,13 +614,13 @@ nav {
   vertical-align: middle;
 }
 
-#project-footer p {
+#web-footer p, #app-footer p {
   font-size: 16px;
   color: #db3324;
   margin-bottom: 8px;
 }
 
-#project-footer img {
+#web-footer img, #app-footer img {
   width: 26px;
 }
 
@@ -982,34 +983,34 @@ nav {
   }
 
   /*專案文章*/
-  #top {
+  #web-top, #app-top {
     height: 48px;
     line-height: 48px;
     padding: 0 16px;
   }
 
-  #top h3 {
+  #web-top h3, #app-top h3 {
     font-size: 24px;
     letter-spacing: 1.7px;
   }
 
-  #project-cover {
+  #web-cover, #app-cover {
     padding: 48px 8.5vw;
   }
 
-  #project-cover h1 {
+  #web-cover h1, #app-cover h1 {
     margin-bottom: 0;
   }
 
-  #project-cover img {
+  #web-cover img, #app-content img {
     margin: 24px 0;
   }
 
-  #project-cover a {
+  #web-cover a, #app-cover a {
     width: 100%;
   }
 
-  #project-content {
+  #web-content, #app-content {
     padding: 48px 8.5vw;
   }
 
@@ -1029,28 +1030,22 @@ nav {
     margin-bottom: 16px;
   }
 
-  #project-content a.next-arrow {
-    right: 8.5vw;
-  }
-
-  #contact {
+  #web-contact, #app-contact {
     padding: 48px 8.5vw 39px;
   }
 
-  #contact form {
+  #web-contact form, #app-contact form {
     display: block;
   }
 
-  .contact-form form input, #contact form input {
+  .contact-form form input, #web-contact form input, #app-contact form input {
     margin-top: 16px;
     width: 100%;
   }
 
-  .contact-form form textarea, #contact form textarea {
-    width: 100%;
-  }
-
-  .contact-form form button, #contact form button {
+  .contact-form form textarea, #web-contact form textarea,
+  .contact-form form button, #web-contact form button,
+  #app-contact form textarea, #app-contact form button, {
     width: 100%;
   }
 }

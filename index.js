@@ -81,14 +81,47 @@ function moveIt(beMoved) {
   beMoved.style.setProperty('transform', 'translateY(' + -(scrollTop / speed) + 'px)');
 }
 
+function fadeIt(beFaded, position) {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  let elHight = beFaded.clientHeight;
+
+  //AOS will affect the result
+  if(beFaded.getAttribute('data-aos')) {
+    beFaded.style.setProperty('opacity', 1 - ((scrollTop - position + 150) / elHight));
+
+  } else {
+    beFaded.style.setProperty('opacity', 1 - ((scrollTop - position) / elHight));
+
+    if(scrollTop - position > 0) {
+      beFaded.style.setProperty('transform', 'translateY(' + -((scrollTop - position) / elHight) * 50 + 'px)');
+    } else {
+      beFaded.style.setProperty('transform', 'translateY(0px)');
+    }
+  }
+}
+
 (function() {
   AOS.init();
 
+  let farestPosition = [];
+
   window.addEventListener('scroll', function(){
-    let items = document.querySelectorAll('[data-scroll-speed]');
-    for(let i = 0; i < items.length; i++) {
-      moveIt(items[i]);
-      let scrollTop = items[i].scrollTop;
+    let moveItems = document.querySelectorAll('[data-scroll-speed]');
+    for(let i = 0; i < moveItems.length; i++) {
+      moveIt(moveItems[i]);
+    }
+
+    let fadeItems = document.getElementsByClassName('fade');
+    for(let i = 0; i < fadeItems.length; i++) {
+      let bodyRect = document.body.getBoundingClientRect().top;
+      let elRect = fadeItems[i].getBoundingClientRect().top;
+      let itemPosition = elRect - bodyRect;
+
+      if(!farestPosition[i] || itemPosition > farestPosition[i]) {
+        farestPosition[i] = itemPosition;
+      }
+
+      fadeIt(fadeItems[i], farestPosition[i]);
     }
   });
 
