@@ -29,15 +29,11 @@ function submitForm () {
   let snackbar = document.getElementById('snackbar');
   if(name && email && text) {
     let data = {};
-    data.text = "來自官網的新訊息";
+    data.text = text;
     data.attachments = [{
       "author_name": name,
       "color": "#ffe605",
       "text": email,
-      "fields": [{
-        "title": text,
-        "short": false
-      }]
     }];
 
     let xhr = new XMLHttpRequest();
