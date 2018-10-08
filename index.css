@@ -627,6 +627,76 @@ nav {
 
 
 @media only screen and (max-width: 740px) {
+  #services {
+    padding: 48px 8.5vw;
+  }
+
+  .service {
+    margin: 5vh auto 0;
+    padding: 7vh 0 0;
+    position: relative;
+  }
+
+  .service-text {
+    width: 100%;
+  }
+
+  .service > div h2 {
+    font-size: 24px;
+  }
+
+  #service-1::after {
+    content: "";
+    width: 240px;
+    height: 240px;
+    background-image: url('./images/workshop.gif');
+    background-repeat: no-repeat;
+    background-size: 240px;
+    background-position: right;
+    margin: 16px auto 0;
+    display: block;
+  }
+
+  #service-2::after {
+    content: "";
+    width: 240px;
+    height: 240px;
+    background-image: url('./images/drawing.gif');
+    background-repeat: no-repeat;
+    background-size: 240px;
+    background-position: right;
+    margin: 16px auto 0;
+    display: block;
+  }
+
+  #service-3::after {
+    content: "";
+    width: 240px;
+    height: 240px;
+    background-image: url('./images/digging.gif');
+    background-repeat: no-repeat;
+    background-size: 240px;
+    background-position: right;
+    margin: 16px auto 0;
+    display: block;
+  }
+
+  #service-4::after {
+    content: "";
+    width: 240px;
+    height: 240px;
+    background-image: url('./images/interviewing.gif');
+    background-repeat: no-repeat;
+    background-size: 240px;
+    background-position: right;
+    margin: 16px auto 0;
+    display: block;
+  }
+
+  .gif {
+    display: none;
+  }
+
   #home-footer {
     height: 851px;
     display: block;
@@ -823,7 +893,7 @@ nav {
     position: relative;
   }
 
-  .service > div:not(.gif-div) {
+  .service-text {
     width: 100%;
   }
 
@@ -831,7 +901,7 @@ nav {
     font-size: 24px;
   }
 
-  .service:nth-child(2) > div::after {
+  #service-1::after {
     content: "";
     width: 240px;
     height: 240px;
@@ -843,7 +913,7 @@ nav {
     display: block;
   }
 
-  .service:nth-child(3) > div::after {
+  #service-2::after {
     content: "";
     width: 240px;
     height: 240px;
@@ -855,7 +925,7 @@ nav {
     display: block;
   }
 
-  .service:nth-child(4) > div:not(.gif-div)::after {
+  #service-3::after {
     content: "";
     width: 240px;
     height: 240px;
@@ -867,7 +937,7 @@ nav {
     display: block;
   }
 
-  .service:nth-child(5) > div::after {
+  #service-4::after {
     content: "";
     width: 240px;
     height: 240px;
