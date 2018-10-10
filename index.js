@@ -149,7 +149,34 @@ function showDot(scrollTop) {
 
 }
 
+function loadHTML(url, id) {
+  req = new XMLHttpRequest();
+  req.open('GET', url);
+  req.send();
+  req.onload = () => {
+    document.getElementById(id).innerHTML = req.responseText;
+  };
+}
+
+
 (function() {
+  let router = new Navigo(null, true, '#!');
+  router.on({
+    // 'view' is the id of the div element inside which we render the HTML
+    '/index.html': () => { loadHTML('./home.html', 'view'); },
+    '/secondroute': () => { loadHTML('./web.html', 'view'); },
+    '/thirdroute': () => { loadHTML('./app.html', 'view'); }
+  });
+
+  // set the default route
+  router.on(() => { loadHTML('./home.html', 'view'); });
+
+  // set the 404 route
+  router.notFound((query) => { document.getElementById('view').innerHTML = '<h3>Couldn\'t find the page you\'re looking for...</h3>'; });
+
+  router.resolve();
+
+
   AOS.init();
 
   let farestPosition = [];
@@ -158,11 +185,8 @@ function showDot(scrollTop) {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
     moveIt(scrollTop);
-
     fadeIt(scrollTop, farestPosition);
-
-
-     showDot(scrollTop);
+    showDot(scrollTop);
   });
 
 })();
