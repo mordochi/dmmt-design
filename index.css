@@ -70,11 +70,16 @@ nav {
   display: none;
 }
 
-/*home*/
-
-#web-intro, #app-intro {
-  display: none;
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: green;
 }
+
+/*home*/
 
 #cover {
   padding: 0 12.5%;

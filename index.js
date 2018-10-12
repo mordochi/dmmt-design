@@ -155,29 +155,38 @@ function loadHTML(url, id) {
   req.send();
   req.onload = () => {
     document.getElementById(id).innerHTML = req.responseText;
+    let images = document.getElementsByTagName('img');
+    for(let i = 0; i < images.length; i++) {
+      images[i].onload = () => {
+        AOS.refreshHard();
+      }
+    }
   };
 }
 
 
 (function() {
-  let router = new Navigo(null, true, '#!');
-  router.on({
-    // 'view' is the id of the div element inside which we render the HTML
-    '/index.html': () => { loadHTML('./home.html', 'view'); },
-    '/secondroute': () => { loadHTML('./web.html', 'view'); },
-    '/thirdroute': () => { loadHTML('./app.html', 'view'); }
-  });
+  AOS.init();
 
-  // set the default route
-  router.on(() => { loadHTML('./home.html', 'view'); });
+  const router = new Navigo();
+  router.on({
+    '/webproject': function () {
+      loadHTML('./web.html', 'view');
+    },
+    '/appproject': function () {
+      loadHTML('./app.html', 'view');
+    },
+    '*': function () {
+      loadHTML('./home.html', 'view');
+    }
+  })
+  .resolve();
 
   // set the 404 route
   router.notFound((query) => { document.getElementById('view').innerHTML = '<h3>Couldn\'t find the page you\'re looking for...</h3>'; });
 
-  router.resolve();
 
 
-  AOS.init();
 
   let farestPosition = [];
 
