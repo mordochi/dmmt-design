@@ -169,27 +169,19 @@ function loadHTML(url, id) {
 }
 
 function getMediumLatestPost() {
-  var xhr = new XMLHttpRequest();
+  const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
 
-  xhr.onreadystatechange = function(){
-    if (xhr.readyState==4 && xhr.status==200) {
-      var data = JSON.parse(xhr.responseText);
+  let parser = new RSSParser();
+  parser.parseURL(CORS_PROXY + 'https://medium.com/feed/%E7%84%A1%E6%83%B3%E8%A8%AD%E8%A8%88', function(err, data) {
+    let thumbnail = data.items[0]['content:encoded'].split("<figcaption>", 1)[0].split("src=")[1].split("/>")[0].split(`"`)[1];
+    //取出 thumbnail 網址
 
-      if(data.status == 'ok'){
-        document.getElementById('medium-thumbnail').src = data.items[0].thumbnail;
-        document.getElementById('medium-title').innerHTML = data.items[0].title;
-        document.getElementById('medium-thumbnail-link').href = data.items[0].link;
-        document.getElementById('medium-title-link').href = data.items[0].link;
-        document.getElementById('medium-link').href = data.items[0].link;
-      }
-    }
-  };
-  xhr.open(
-    'GET',
-    'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%25E7%2584%25A1%25E6%2583%25B3%25E8%25A8%25AD%25E8%25A8%2588',
-    true
-  );
-  xhr.send();
+    document.getElementById('medium-thumbnail').src = thumbnail;
+    document.getElementById('medium-title').innerHTML = data.items[0].title;
+    document.getElementById('medium-thumbnail-link').href = data.items[0].link;
+    document.getElementById('medium-title-link').href = data.items[0].link;
+    document.getElementById('medium-link').href = data.items[0].link;
+  });
 }
 
 
