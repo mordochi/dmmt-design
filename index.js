@@ -149,25 +149,6 @@ function showDot(scrollTop) {
 
 }
 
-function loadHTML(url, id) {
-  req = new XMLHttpRequest();
-  req.open('GET', url);
-  req.send();
-  req.onload = () => {
-    document.getElementById(id).innerHTML = req.responseText;
-    let images = document.getElementsByTagName('img');
-    for(let i = 0; i < images.length; i++) {
-      images[i].onload = () => {
-        AOS.refreshHard();
-      }
-    }
-
-    if(url === './home.html') {
-      getMediumLatestPost();
-    }
-  };
-}
-
 function getMediumLatestPost() {
   const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
 
@@ -184,16 +165,113 @@ function getMediumLatestPost() {
   });
 }
 
+function setContent(json, prefix) {
+  document.getElementById('no').innerHTML = json.No;
+  document.getElementById('img').src = json.img;
+  document.getElementById('name').innerHTML = json.name;
+  document.getElementById('intro').innerHTML = json.intro;
+  document.getElementById('medium-thumbnail').src = json.medium.img;
+  document.getElementById('medium-title').innerHTML = json.medium.title;
+  document.getElementById('medium-link').href = json.medium.link;
+
+  let webLink = document.getElementsByClassName(prefix + 'link');
+  for(let i = 0; i < webLink.length; i++) {
+    console.log(webLink[i])
+    webLink[i].href = json.link;
+  }
+
+  let webContent = document.getElementById(prefix + 'content');
+  let contentLast = document.getElementById(prefix + 'medium');
+  for(let i = 0; i < json.content.length; i++) {
+    let contentDiv = document.createElement("DIV");
+    contentDiv.setAttribute("class", "fade");
+    contentDiv.setAttribute("data-aos", "fade-up");
+    contentDiv.setAttribute("data-aos-once", "true");
+    contentDiv.setAttribute("data-aos-duration", "1000");
+    contentDiv.setAttribute("data-aos-anchor-placement", "top-bottom");
+
+    let h4 = document.createElement("H4");
+    let contentH4 = document.createTextNode(json.content[i].paragraphTitle);
+    h4.appendChild(contentH4);
+
+    let p = document.createElement("P");
+    let contentP = document.createTextNode(json.content[i].paragraphContent);
+    p.appendChild(contentP);
+
+    contentDiv.appendChild(h4);
+    contentDiv.appendChild(p);
+
+    webContent.insertBefore(contentDiv, contentLast);
+
+    AOS.refreshHard();
+  }
+}
+
+function loadHTML(url, id) {
+  if(url !== './home.html') {
+    let jsonUrl;
+    let prefix;
+    if(url === './web.html') {
+      prefix = 'web-';
+      jsonUrl = './content/web/example.json';
+    } else {
+      prefix = 'app-';
+      jsonUrl = './content/app/example.json';
+    }
+
+    let jsonReq = new XMLHttpRequest();
+    jsonReq.open('GET', jsonUrl);
+    jsonReq.responseType = 'json';
+    jsonReq.send();
+    jsonReq.onload = () => {
+      let json = jsonReq.response;
+
+      let req = new XMLHttpRequest();
+      req.open('GET', url);
+      req.responseType = 'text';
+      req.send();
+      req.onload = () => {
+        document.getElementById(id).innerHTML = req.responseText;
+        setContent(json, prefix);
+
+        let images = document.getElementsByTagName('img');
+        for(let i = 0; i < images.length; i++) {
+          images[i].onload = () => {
+            AOS.refreshHard();
+          }
+        }
+      };
+    };
+  } else {
+    let req = new XMLHttpRequest();
+    req.open('GET', url);
+    req.send();
+    req.onload = () => {
+      document.getElementById(id).innerHTML = req.responseText;
+      let images = document.getElementsByTagName('img');
+      for(let i = 0; i < images.length; i++) {
+        images[i].onload = () => {
+          AOS.refreshHard();
+        }
+      }
+
+      getMediumLatestPost();
+    };
+  }
+}
+
+
+
 
 (function() {
   AOS.init();
 
   const router = new Navigo();
   router.on({
-    '/webproject': function () {
+    '/project-web': function () {
       loadHTML('./web.html', 'view');
     },
-    '/appproject': function () {
+    '/project-app': function () {
       loadHTML('./app.html', 'view');
     },
     '*': function () {
