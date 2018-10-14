@@ -551,7 +551,7 @@ nav {
   padding-left: 10%;
 }
 
-#home-footer > div img {
+#home-footer > div a img {
   vertical-align: middle;
 }
 
@@ -588,7 +588,7 @@ nav {
   vertical-align: middle;
 }
 
-.contact-info > img {
+.contact-info > img, .contact-info a > img {
   width: 40px;
   margin-right: 18px;
 }
@@ -822,7 +822,7 @@ nav {
   margin-bottom: 12px;
 }
 
-#web-footer img:nth-child(1), #app-footer img:nth-child(1) {
+#web-footer > img:nth-child(1), #app-footer > img:nth-child(1) {
   vertical-align: middle;
 }
 
@@ -993,7 +993,7 @@ nav {
     margin: 24px 0 19px;
   }
 
-  .contact-info img {
+  .contact-info img, .contact-info a > img {
     margin-right: 10px;
   }
 }
@@ -1331,7 +1331,7 @@ nav {
     padding: 64px 8.5vw;
   }
 
-  .contact-info img {
+  .contact-info img, .contact-info a > img {
     margin-right: 10px;
   }
 
@@ -1391,14 +1391,13 @@ nav {
     display: block;
   }
 
-  .contact-form form input, #web-contact form input, #app-contact form input {
+  .contact-form form textarea, #web-contact form textarea, #app-contact form textarea,
+  .contact-form form button, #web-contact form button, #app-contact form button {
     margin-top: 16px;
     width: 100%;
   }
 
-  .contact-form form textarea, #web-contact form textarea,
-  .contact-form form button, #web-contact form button,
-  #app-contact form textarea, #app-contact form button, {
+  .contact-form form input, #web-contact form input, #app-contact form input {
     width: 100%;
   }
 }
