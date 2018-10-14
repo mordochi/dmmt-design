@@ -79,6 +79,32 @@ nav {
   background-color: green;
 }
 
+/*red dot*/
+
+.jump {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  margin-bottom: 10px;
+}
+
+.jumping1, .jumping2 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#web-cover .jump, #app-cover .jump {
+  margin-left: 25px;
+  margin-bottom: 25px;
+}
+
 /*home*/
 
 #cover {
@@ -333,6 +359,7 @@ nav {
   font-size: 72px;
   font-weight: 900;
   color: #000000;
+  display: inline-block;
 }
 
 .service {
@@ -682,7 +709,6 @@ nav {
   font-size: 32px;
   font-weight: 900;
   color: #000000;
-  margin-left: 20px;
   margin-bottom: 24px;
   display: inline-block;
 }
@@ -1159,6 +1185,17 @@ nav {
     color: #fff;
     margin-bottom: 48px;
     display: block;
+  }
+
+  /*red dot*/
+
+  .jump {
+    margin-bottom: 0;
+  }
+
+  #web-cover .jump, #app-cover .jump {
+    margin-left: 0px;
+    margin-bottom: 0px;
   }
 
   /*home*/

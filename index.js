@@ -76,6 +76,55 @@ function submitForm () {
   }
 }
 
+function redDot() {
+  let jumping1s = document.getElementsByClassName('jumping1');
+  let jumping2s = document.getElementsByClassName('jumping2');
+
+  for(let i = 0; i < jumping1s.length; i++) {
+    jumping1s[i].animate([
+      // keyframes
+      { opacity: '1' },
+      { opacity: '0.1' }
+    ], {
+      // timing options
+      duration: 1500,
+      iterations: Infinity
+    });
+
+    jumping1s[i].animate([
+    // keyframes
+      { transform: 'scale(0.4)' },
+      { transform: 'scale(2)' }
+    ], {
+      // timing options
+      duration: 1500,
+      iterations: Infinity
+    });
+
+    jumping2s[i].animate([
+    // keyframes
+      { opacity: '1' },
+      { opacity: '0.1' }
+    ], {
+      // timing options
+      duration: 1500,
+      delay: 750,
+      iterations: Infinity
+    });
+
+    jumping2s[i].animate([
+    // keyframes
+      { transform: 'scale(0.4)' },
+      { transform: 'scale(2)' }
+    ], {
+      // timing options
+      duration: 1500,
+      delay: 750,
+      iterations: Infinity
+    });
+  }
+}
+
 function moveIt(scrollTop) {
   let moveItems = document.querySelectorAll('[data-scroll-speed]');
 
@@ -183,7 +232,6 @@ function setProjectContent(json, prefix) {
 
   let webLink = document.getElementsByClassName(prefix + 'link');
   for(let i = 0; i < webLink.length; i++) {
-    console.log(webLink[i])
     webLink[i].href = json.link;
   }
 
@@ -264,6 +312,8 @@ function loadHTML(url, id) {
         setProjectContent(json, prefix);
       }
 
+      redDot();
+
       let images = document.getElementsByTagName('img');
       for(let i = 0; i < images.length; i++) {
         images[i].onload = () => {
@@ -298,8 +348,6 @@ function loadHTML(url, id) {
   router.notFound((query) => { document.getElementById('view').innerHTML = '<h3>Couldn\'t find the page you\'re looking for...</h3>'; });
 
 
-
-
   let farestPosition = [];
 
   window.addEventListener('scroll', function(){
@@ -309,6 +357,5 @@ function loadHTML(url, id) {
     fadeIt(scrollTop, farestPosition);
     showDot(scrollTop);
   });
-
 })();
 
