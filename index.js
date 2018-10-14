@@ -114,8 +114,6 @@ function fadeIt(scrollTop, farestPosition) {
       }
     }
   }
-
-
 }
 
 function showDot(scrollTop) {
@@ -146,7 +144,16 @@ function showDot(scrollTop) {
       dots3[i].style.setProperty('opacity', '0');
     }
   }
+}
 
+function clickNav(id) {
+  document.getElementById('nav-checkbox').checked = false;
+  document.getElementById(id).scrollIntoView(
+    {
+      behavior: 'smooth',
+      block: 'start'
+    },
+  );
 }
 
 function getMediumLatestPost() {
