@@ -172,7 +172,7 @@ function getMediumLatestPost() {
   });
 }
 
-function setContent(json, prefix) {
+function setProjectContent(json, prefix) {
   document.getElementById('no').innerHTML = json.No;
   document.getElementById('img').src = json.img;
   document.getElementById('name').innerHTML = json.name;
@@ -214,57 +214,64 @@ function setContent(json, prefix) {
   }
 }
 
+function setHomeContent(json) {
+  let serviceTitles = document.querySelectorAll('.service h2');
+  let serviceDescs = document.querySelectorAll('.service p');
+
+  for(let i = 0; i < serviceTitles.length; i++) {
+    serviceTitles[i].innerHTML = json.services[i].title;
+  }
+
+  for(let i = 0; i < serviceDescs.length; i++) {
+    serviceDescs[i].innerHTML = json.services[i].desc;
+  }
+
+  document.querySelectorAll('.belief p')[0].innerHTML = json["about-us"];
+}
+
 function loadHTML(url, id) {
-  if(url !== './home.html') {
-    let jsonUrl;
-    let prefix;
-    if(url === './web.html') {
-      prefix = 'web-';
-      jsonUrl = './content/web/example.json';
-    } else {
-      prefix = 'app-';
-      jsonUrl = './content/app/example.json';
-    }
+  let jsonUrl;
+  let prefix;
+  let setContent;
 
-    let jsonReq = new XMLHttpRequest();
-    jsonReq.open('GET', jsonUrl);
-    jsonReq.responseType = 'json';
-    jsonReq.send();
-    jsonReq.onload = () => {
-      let json = jsonReq.response;
-
-      let req = new XMLHttpRequest();
-      req.open('GET', url);
-      req.responseType = 'text';
-      req.send();
-      req.onload = () => {
-        document.getElementById(id).innerHTML = req.responseText;
-        setContent(json, prefix);
-
-        let images = document.getElementsByTagName('img');
-        for(let i = 0; i < images.length; i++) {
-          images[i].onload = () => {
-            AOS.refreshHard();
-          }
-        }
-      };
-    };
+  if(url === './home.html') {
+    jsonUrl = './content/home.json';
+  } else if(url === './web.html') {
+    prefix = 'web-';
+    jsonUrl = './content/web/example.json';
   } else {
+    prefix = 'app-';
+    jsonUrl = './content/app/example.json';
+  }
+
+  let jsonReq = new XMLHttpRequest();
+  jsonReq.open('GET', jsonUrl);
+  jsonReq.responseType = 'json';
+  jsonReq.send();
+  jsonReq.onload = () => {
+    let json = jsonReq.response;
+
     let req = new XMLHttpRequest();
     req.open('GET', url);
+    req.responseType = 'text';
     req.send();
     req.onload = () => {
       document.getElementById(id).innerHTML = req.responseText;
+      if(url === './home.html') {
+        getMediumLatestPost();
+        setHomeContent(json);
+      } else {
+        setProjectContent(json, prefix);
+      }
+
       let images = document.getElementsByTagName('img');
       for(let i = 0; i < images.length; i++) {
         images[i].onload = () => {
           AOS.refreshHard();
         }
       }
-
-      getMediumLatestPost();
     };
-  }
+  };
 }
 
 
