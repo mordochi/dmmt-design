@@ -100,6 +100,11 @@ nav {
   left: 0;
 }
 
+.service-text .jumping1, .service-text .jumping2 {
+  width: 7px;
+  height: 7px;
+}
+
 #web-cover .jump, #app-cover .jump {
   margin-left: 25px;
   margin-bottom: 25px;
@@ -373,23 +378,38 @@ nav {
   vertical-align: middle;
 }
 
-.service:nth-child(2) {
+.service:nth-child(3) {
   background-image: url('./images/01.png');
   background-size: 17vh;
   background-repeat: no-repeat;
 }
 
-.service:nth-child(6) {
+.service:nth-child(5) {
+  background-image: url('./images/02.png');
+  background-size: 17vh;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+.service:nth-child(7) {
   background-image: url('./images/03.png');
   background-size: 17vh;
   background-repeat: no-repeat;
 }
 
-.service > div h2 {
+.service:nth-child(9) {
+  background-image: url('./images/04.png');
+  background-size: 17vh;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+.service-text h2 {
   font-size: 32px;
   font-weight: 300;
   color: #000000;
-  margin: 0 0 14px 16px;
+  margin: 0 0 14px 0;
+  display: inline-block;
 }
 
 .service > div p {
@@ -1229,7 +1249,11 @@ nav {
     width: 100%;
   }
 
-  .service > div h2 {
+  .service-text .jump {
+    margin-bottom: 12px;
+  }
+
+  .service-text h2 {
     font-size: 24px;
   }
 
