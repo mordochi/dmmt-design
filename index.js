@@ -166,12 +166,13 @@ function fadeIt(scrollTop, farestPosition) {
 }
 
 function showDot(scrollTop) {
+  let windowWidth = window.innerWidth;
   let dots1 = document.querySelectorAll('#dot-pack-1 div');
   let dots2 = document.querySelectorAll('#dot-pack-2 div');
   let dots3 = document.querySelectorAll('#dot-pack-3 div');
 
   for(let i = 0; i < dots1.length; i++) {
-    if(scrollTop > 220 + (15 * i)) {
+    if(scrollTop > 0.26 * windowWidth + (13 * i)) {
       dots1[i].style.setProperty('opacity', '1');
     } else {
       dots1[i].style.setProperty('opacity', '0');
@@ -179,7 +180,7 @@ function showDot(scrollTop) {
   }
 
   for(let i = 0; i < dots2.length; i++) {
-    if(scrollTop > 500 + (15 * i)) {
+    if(scrollTop > 0.54 * windowWidth + (13 * i)) {
       dots2[i].style.setProperty('opacity', '1');
     } else {
       dots2[i].style.setProperty('opacity', '0');
@@ -187,7 +188,7 @@ function showDot(scrollTop) {
   }
 
   for(let i = 0; i < dots3.length; i++) {
-    if(scrollTop > 735 + (15 * i)) {
+    if(scrollTop > 0.81 * windowWidth + (13 * i)) {
       dots3[i].style.setProperty('opacity', '1');
     } else {
       dots3[i].style.setProperty('opacity', '0');

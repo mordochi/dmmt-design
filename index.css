@@ -402,6 +402,8 @@ nav {
   background-size: 17vh;
   background-repeat: no-repeat;
   background-position: right top;
+  position: relative;
+  z-index: 3;
 }
 
 .service-text h2 {
@@ -432,8 +434,26 @@ nav {
   width: 100%;
 }
 
+.services-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background-color: #f5f5f5;
+}
+
+.services-bottom img {
+  width: 100%;
+  display: block;
+}
+
 #projects {
   padding: 152px 12.5% 73px;
+  position: relative;
+  background-image: url('./images/projectsTop.png');
+  background-size: 19.53vw;
+  background-position: top right;
+  background-repeat: no-repeat;
 }
 
 .project, .article {
@@ -449,6 +469,8 @@ nav {
 
 .article {
   margin-top: 60px;
+  position: relative;
+  z-index: 3;
 }
 
 .web, .app {
@@ -494,6 +516,19 @@ nav {
   font-weight: 500;
   color: #0f0f0f;
   margin-top: 13px;
+}
+
+.projects-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background-color: #fff;
+}
+
+.projects-bottom img {
+  width: 100%;
+  display: block;
 }
 
 #about {
@@ -1309,8 +1344,13 @@ nav {
     display: none;
   }
 
+  .services-bottom {
+    display: none;
+  }
+
   #projects {
     padding: 84px 8.5vw 48px;
+    background-image: none;
   }
 
   .project {
@@ -1337,6 +1377,10 @@ nav {
 
   .article h3 {
     font-size: 16px;
+  }
+
+  .projects-bottom {
+    display: none;
   }
 
   #about {
