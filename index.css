@@ -94,7 +94,7 @@ nav {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: red;
+  background-color: #e95036;
   position: absolute;
   top: 0;
   left: 0;
@@ -496,11 +496,12 @@ nav {
   margin-bottom: 14px;
 }
 
-.project a, .article a {
+.project p, .article a {
   font-size: 18px;
   font-weight: bold;
   color: #e95036;
   display: block;
+  cursor: pointer;
 }
 
 .project p {

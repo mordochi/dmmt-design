@@ -1,26 +1,26 @@
-{
+[{
   "No": "01",
   "name": "app 專案",
   "intro": "手機 app",
   "link": "/",
-  "img": "./images/introImg.png",
+  "img": "./images/fakeImg.png",
   "content": [
     {
-      "paragrphTitle": "標題1",
+      "paragraphTitle": "標題1",
       "paragraphContent": "內容1"
     },
     {
-      "paragrphTitle": "標題2",
+      "paragraphTitle": "標題2",
       "paragraphContent": "內容2"
     },
     {
-      "paragrphTitle": "標題3",
+      "paragraphTitle": "標題3",
       "paragraphContent": "內容3"
     }
   ],
   "medium": {
-    "img": "./images/introImg.png",
+    "img": "./images/fakeImg.png",
     "title": "medium 文章",
     "link": "/"
   }
-}
+}]

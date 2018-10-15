@@ -278,6 +278,11 @@ function setHomeContent(json) {
   document.querySelectorAll('.belief p')[0].innerHTML = json["about-us"];
 }
 
+function showProject(type) {
+  router.navigate('/project-' + type + '?id=1');
+
+}
+
 function loadHTML(url, id) {
   let jsonUrl;
   let prefix;
@@ -310,7 +315,8 @@ function loadHTML(url, id) {
         getMediumLatestPost();
         setHomeContent(json);
       } else {
-        setProjectContent(json, prefix);
+        document.getElementById(prefix + 'intro').scrollIntoView();
+        setProjectContent(json[0], prefix);
       }
 
       redDot();
@@ -328,26 +334,22 @@ function loadHTML(url, id) {
 
 
 
+const router = new Navigo();
+
 (function() {
   AOS.init();
 
-  const router = new Navigo();
   router.on({
-    '/project-web': function () {
+    '/project-web*': function () {
       loadHTML('./web.html', 'view');
     },
-    '/project-app': function () {
+    '/project-app*': function () {
       loadHTML('./app.html', 'view');
     },
     '*': function () {
       loadHTML('./home.html', 'view');
     }
-  })
-  .resolve();
-
-  // set the 404 route
-  router.notFound((query) => { document.getElementById('view').innerHTML = '<h3>Couldn\'t find the page you\'re looking for...</h3>'; });
-
+  }).resolve();
 
   let farestPosition = [];
 
