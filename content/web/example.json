@@ -1,26 +1,46 @@
-[{
-  "No": "01",
-  "name": "寄寓",
-  "intro": "形象網站",
-  "link": "https://goodlivingtaipei.com/",
-  "img": "./images/fakeImg.png",
-  "content": [
-    {
-      "paragraphTitle": "標題1",
-      "paragraphContent": "內容1"
-    },
-    {
-      "paragraphTitle": "標題2",
-      "paragraphContent": "內容2"
-    },
-    {
-      "paragraphTitle": "標題3",
-      "paragraphContent": "內容3"
+[
+  {
+    "No": "01",
+    "name": "寄寓",
+    "intro": "形象網站",
+    "link": "https://goodlivingtaipei.com/",
+    "img": "./images/fakeImg.png",
+    "content": [
+      {
+        "paragraphTitle": "標題1",
+        "paragraphContent": "內容1"
+      },
+      {
+        "paragraphTitle": "標題2",
+        "paragraphContent": "內容2"
+      },
+      {
+        "paragraphTitle": "標題3",
+        "paragraphContent": "內容3"
+      }
+    ],
+    "medium": {
+      "img": "https://cdn-images-1.medium.com/max/2000/1*OAApwOxtoLuv7txXWkNBPQ.png",
+      "title": "輕裝潢與貼心服務・月租市場新玩家寄寓要翻轉屋主房客對立關係",
+      "link": "https://medium.com/%E7%84%A1%E6%83%B3%E8%A8%AD%E8%A8%88/%E8%BC%95%E8%A3%9D%E6%BD%A2%E8%88%87%E8%B2%BC%E5%BF%83%E6%9C%8D%E5%8B%99-%E6%9C%88%E7%A7%9F%E5%B8%82%E5%A0%B4%E6%96%B0%E7%8E%A9%E5%AE%B6%E5%AF%84%E5%AF%93%E8%A6%81%E7%BF%BB%E8%BD%89%E5%B1%8B%E4%B8%BB%E6%88%BF%E5%AE%A2%E5%B0%8D%E7%AB%8B%E9%97%9C%E4%BF%82-c62b58b26536"
     }
-  ],
-  "medium": {
-    "img": "https://cdn-images-1.medium.com/max/2000/1*OAApwOxtoLuv7txXWkNBPQ.png",
-    "title": "輕裝潢與貼心服務・月租市場新玩家寄寓要翻轉屋主房客對立關係",
-    "link": "https://medium.com/%E7%84%A1%E6%83%B3%E8%A8%AD%E8%A8%88/%E8%BC%95%E8%A3%9D%E6%BD%A2%E8%88%87%E8%B2%BC%E5%BF%83%E6%9C%8D%E5%8B%99-%E6%9C%88%E7%A7%9F%E5%B8%82%E5%A0%B4%E6%96%B0%E7%8E%A9%E5%AE%B6%E5%AF%84%E5%AF%93%E8%A6%81%E7%BF%BB%E8%BD%89%E5%B1%8B%E4%B8%BB%E6%88%BF%E5%AE%A2%E5%B0%8D%E7%AB%8B%E9%97%9C%E4%BF%82-c62b58b26536"
+  },
+  {
+   "No": "02",
+    "name": "name",
+    "intro": "intro",
+    "link": "https://goodlivingtaipei.com/",
+    "img": "./images/fakeImg.png",
+    "content": [
+      {
+        "paragraphTitle": "標題122",
+        "paragraphContent": "內容122"
+      }
+    ],
+    "medium": {
+      "img": "https://cdn-images-1.medium.com/max/2000/1*OAApwOxtoLuv7txXWkNBPQ.png",
+      "title": "medium",
+      "link": "https://medium.com/%E7%84%A1%E6%83%B3%E8%A8%AD%E8%A8%88/%E8%BC%95%E8%A3%9D%E6%BD%A2%E8%88%87%E8%B2%BC%E5%BF%83%E6%9C%8D%E5%8B%99-%E6%9C%88%E7%A7%9F%E5%B8%82%E5%A0%B4%E6%96%B0%E7%8E%A9%E5%AE%B6%E5%AF%84%E5%AF%93%E8%A6%81%E7%BF%BB%E8%BD%89%E5%B1%8B%E4%B8%BB%E6%88%BF%E5%AE%A2%E5%B0%8D%E7%AB%8B%E9%97%9C%E4%BF%82-c62b58b26536"
+    }
   }
-}]
+]

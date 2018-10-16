@@ -275,29 +275,58 @@ function setHomeContent(json) {
     serviceDescs[i].innerHTML = json.services[i].desc;
   }
 
-  document.querySelectorAll('.belief p')[0].innerHTML = json["about-us"];
+  document.querySelectorAll('.belief p')[0].innerHTML = json["aboutUs"];
+}
+
+function anotherProject(type, direction) {
+  let currentProjectId = Number(window.location.href.split("?id=")[1]);
+
+  if(direction === "prev") {
+    if(currentProjectId === 1) {
+      projectId = projectNum;
+    } else {
+      projectId = currentProjectId - 1;
+    }
+  } else {
+    if(currentProjectId === projectNum) {
+      projectId = 1;
+    } else {
+      projectId = currentProjectId + 1;
+    }
+  }
+
+  router.navigate('/project-' + type + '?id=' + projectId);
 }
 
 function showProject(type) {
   router.navigate('/project-' + type + '?id=1');
-
 }
 
-function loadHTML(url, id) {
-  let jsonUrl;
-  let prefix;
-  let setContent;
+function setContent(page, id) {
+  document.getElementById(id).innerHTML = sessionStorage.getItem(page + 'HTML');
+  let storageJson = JSON.parse(sessionStorage.getItem(page + 'Json'));
 
-  if(url === './home.html') {
-    jsonUrl = './content/home.json';
-  } else if(url === './web.html') {
-    prefix = 'web-';
-    jsonUrl = './content/web/example.json';
+  if(page === "home") {
+    getMediumLatestPost();
+    setHomeContent(storageJson);
   } else {
-    prefix = 'app-';
-    jsonUrl = './content/app/example.json';
+    projectId = Number(window.location.href.split("?id=")[1]);
+    projectNum = storageJson.length;
+    document.getElementById(page + '-intro').scrollIntoView();
+    setProjectContent(storageJson[projectId - 1], (page + '-'));
   }
 
+  redDot();
+
+  let images = document.getElementsByTagName('img');
+  for(let i = 0; i < images.length; i++) {
+    images[i].onload = () => {
+      AOS.refreshHard();
+    }
+  }
+}
+
+function firstRequest(jsonUrl, url, id) {
   let jsonReq = new XMLHttpRequest();
   jsonReq.open('GET', jsonUrl);
   jsonReq.responseType = 'json';
@@ -310,31 +339,62 @@ function loadHTML(url, id) {
     req.responseType = 'text';
     req.send();
     req.onload = () => {
-      document.getElementById(id).innerHTML = req.responseText;
       if(url === './home.html') {
-        getMediumLatestPost();
-        setHomeContent(json);
+        sessionStorage.setItem('homeHTML', req.responseText);
+        sessionStorage.setItem('homeJson', JSON.stringify(json));
+
+        setContent('home', id);
+      } else if(url === './web.html') {
+        sessionStorage.setItem('webHTML', req.responseText);
+        sessionStorage.setItem('webJson', JSON.stringify(json));
+
+        setContent('web', id);
       } else {
-        document.getElementById(prefix + 'intro').scrollIntoView();
-        setProjectContent(json[0], prefix);
-      }
+        sessionStorage.setItem('appHTML', req.responseText);
+        sessionStorage.setItem('appJson', JSON.stringify(json));
 
-      redDot();
-
-      let images = document.getElementsByTagName('img');
-      for(let i = 0; i < images.length; i++) {
-        images[i].onload = () => {
-          AOS.refreshHard();
-        }
+        setContent('app', id);
       }
     };
   };
+}
+
+function loadHTML(url, id) {
+  let jsonUrl;
+
+  if(url === './home.html') {
+    jsonUrl = './content/home.json';
+
+    if(sessionStorage.getItem('homeHTML') && sessionStorage.getItem('homeJson')) {
+      setContent('home', id);
+    } else {
+      firstRequest(jsonUrl, url, id);
+    }
+  } else if(url === './web.html') {
+    jsonUrl = './content/web/example.json';
+
+    if(sessionStorage.getItem('webHTML') && sessionStorage.getItem('webJson')) {
+      setContent('web', id);
+    } else {
+      firstRequest(jsonUrl, url, id);
+    }
+  } else {
+    jsonUrl = './content/app/example.json';
+
+    if(sessionStorage.getItem('appHTML') && sessionStorage.getItem('appJson')) {
+      setContent('app', id);
+    } else {
+      firstRequest(jsonUrl, url, id);
+    }
+  }
 }
 
 
 
 
 const router = new Navigo();
+let projectId;
+let projectNum;
 
 (function() {
   AOS.init();

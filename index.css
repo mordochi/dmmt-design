@@ -866,13 +866,14 @@ nav {
   max-width: 300px;
 }
 
-#web-content a.back-arrow, #web-content a.next-arrow, #app-content a.back-arrow, #app-content a.next-arrow {
+#web-content p.back-arrow, #web-content p.next-arrow, #app-content p.back-arrow, #app-content p.next-arrow {
   font-size: 18px;
   font-weight: bold;
   color: #e95036;
+  cursor: pointer;
 }
 
-#web-content a.next-arrow, #app-content a.next-arrow {
+#web-content p.next-arrow, #app-content p.next-arrow {
   position: absolute;
   bottom: 0;
   right: 0;
