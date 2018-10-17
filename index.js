@@ -206,6 +206,34 @@ function clickNav(id) {
   );
 }
 
+function shrinkRedCover(prefix) {
+  let bodyRect = document.body.getBoundingClientRect();
+  let elemRect = document.getElementById(prefix + 'jump').getBoundingClientRect();
+  let offsetTop   = elemRect.top - bodyRect.top;
+  let offsetLeft   = elemRect.left - bodyRect.left;
+
+  if(document.getElementById('red-cover').offsetWidth > document.getElementById('red-cover').offsetHeight) {
+    document.getElementById('red-cover').style.top =`-50vh`;
+    document.getElementById('red-cover').style.left =`-20vw`;
+    document.getElementById('red-cover').style.width = "150vw";
+    document.getElementById('red-cover').style.height = "150vw";
+  } else {
+    document.getElementById('red-cover').style.top =`-20vh`;
+    document.getElementById('red-cover').style.left =`-50vw`;
+    document.getElementById('red-cover').style.width = "150vh";
+    document.getElementById('red-cover').style.height = "150vh";
+  }
+  document.getElementById('red-cover').style.borderRadius = "50%";
+
+  //避免上面的改變影響後續的改變
+  setTimeout(() => {
+    document.getElementById('red-cover').style.top =`${offsetTop}px`;
+    document.getElementById('red-cover').style.left =`${offsetLeft}px`;
+    document.getElementById('red-cover').style.width="0px";
+    document.getElementById('red-cover').style.height="0px";
+  }, 400);
+}
+
 function getMediumLatestPost() {
   const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
 
@@ -223,6 +251,8 @@ function getMediumLatestPost() {
 }
 
 function setProjectContent(json, prefix) {
+  shrinkRedCover(prefix);
+
   document.getElementById('no').innerHTML = json.No;
   document.getElementById('img').src = json.img;
   document.getElementById('name').innerHTML = json.name;
@@ -259,7 +289,9 @@ function setProjectContent(json, prefix) {
 
     webContent.insertBefore(contentDiv, contentLast);
 
-    AOS.refreshHard();
+    if(i === json.content.length - 1) {
+      AOS.refreshHard();
+    }
   }
 }
 
@@ -299,7 +331,22 @@ function anotherProject(type, direction) {
 }
 
 function showProject(type) {
-  router.navigate('/project-' + type + '?id=1');
+  //下面的訪談文章原有position: relative 因此不會被擴大的紅色背景擋住
+  document.getElementsByClassName('article')[0].style.position="static";
+
+  if(type === 'web') {
+    document.querySelectorAll('.app div')[0].style.position="static";
+    document.getElementById('app-zoom-in').style.position="static";
+    document.getElementById('web-zoom-in').style.transform="scale(25)";
+    document.getElementById('web-zoom-in-inner').style.transform="translateY(100vh)";
+  } else {
+    document.getElementById('app-zoom-in').style.transform="scale(110)";
+  }
+
+  setTimeout(() => {
+    router.navigate('/project-' + type + '?id=1');
+  }, 900);
+
 }
 
 function setContent(page, id) {

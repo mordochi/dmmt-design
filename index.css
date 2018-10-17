@@ -481,8 +481,50 @@ nav {
   background-position: right bottom;
 }
 
-.web img, .app img {
+.web > div, .app > div {
+  position: relative;
+}
+
+.web img {
   width: 24vw;
+  position: relative;
+}
+
+.app img {
+  width: 24vw;
+}
+
+#web-zoom-in {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -ms-transition: all .4s ease-out;
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+  -ms-transform-origin: center center;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+}
+
+#web-zoom-in-inner {
+  -ms-transition: all .4s ease-out .3s;
+  -webkit-transition: all .4s ease-out .3s;
+  transition: all .4s ease-out .3s;
+}
+
+#app-zoom-in {
+  position: absolute;
+  bottom: 1vw;
+  right: 6.5vw;
+
+  width: 12vw;
+  -ms-transition: all .4s ease-out;
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+  -ms-transform-origin: center center;
+  -webkit-transform-origin: center center;
+  transform-origin: 75% 75%;
 }
 
 .article img {
@@ -627,6 +669,7 @@ nav {
 .contact-info-set > img {
   height: 30px;
   margin-right: 12px;
+  vertical-align: middle;
 }
 
 #home-footer .contact-form {
@@ -645,6 +688,10 @@ nav {
   color: #030303;
   display: inline-block;
   vertical-align: middle;
+}
+
+#home-footer a {
+  color: #030303;
 }
 
 .contact-info h5 {
@@ -738,12 +785,30 @@ nav {
 
 /*專案文章*/
 
+#red-cover {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e95036;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  -ms-transition: all .4s ease-out;
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+  -ms-transform-origin: center center;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+}
+
 #web-top, #app-top {
   padding: 24px 32px;
   background-color: #fff;
 }
 
 #web-top img, #app-top img {
+  height: 32px;
   margin-right: 17px;
   vertical-align: middle;
 }
@@ -903,6 +968,12 @@ nav {
 
 #web-footer > div, #app-footer > div {
   margin-bottom: 12px;
+}
+
+#web-footer > div img, #app-footer > div img {
+  width: auto;
+  height: 22px;
+  vertical-align: middle;
 }
 
 #web-footer > img:nth-child(1), #app-footer > img:nth-child(1) {
@@ -1371,6 +1442,12 @@ nav {
 
   .web img, .app img {
     width: 64vw;
+  }
+
+  #app-zoom-in {
+    width: 32vw;
+    bottom: 3vw;
+    right: 24vw;
   }
 
   .article {

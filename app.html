@@ -1,21 +1,29 @@
 <div id="app-intro">
+  <div id="red-cover"></div>
   <div id="app-top">
     <a href="/">
-      <img src="https://fakeimg.pl/32x32/cecece/?text=logo" alt="logo">
+      <img src="./images/logo.png" alt="logo">
       <h3>無想設計</h3>
     </a>
   </div>
 
   <div id="app-cover">
-    <div class="jump" data-scroll-speed="9">
-      <div class="jumping1"></div>
-      <div class="jumping2"></div>
+    <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="400">
+      <div class="jump" data-scroll-speed="9" id="app-jump">
+        <div class="jumping1"></div>
+        <div class="jumping2"></div>
+      </div>
+
+      <h1>Featured Project </h1><span>App<span id="no"></span></span>
     </div>
-    <h1>Featured Project </h1><span>App<span id="no"></span></span>
-    <img src="https://fakeimg.pl/780x400/cecece/?text=app" alt="app-img" id="img" class="fade">
-    <h3 id="name" class="fade"></h3>
-    <p id="intro" class="fade"></p>
-    <div class="fade" data-aos="fade-up" data-aos-once="true" data-aos-anchor-placement="top-bottom">
+    <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="600">
+      <img src="./images/fakeImg.png" alt="app-img" id="img" class="fade" >
+    </div>
+    <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="800" data-aos-anchor-placement="top-bottom">
+      <h3 id="name" class="fade"></h3>
+      <p id="intro" class="fade"></p>
+    </div>
+    <div class="fade" data-aos="fade-up" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
       <a class="app-link" href="/" target="_blank">前往網站</a>
     </div>
   </div>
@@ -55,8 +63,8 @@
 
   <footer id="app-footer">
     <div>
-      <img src="https://fakeimg.pl/25x25/cecece/?text=logo" alt="logo">
-      <h6>無想設計</h6>
+      <img src="./images/logo.png" alt="logo">
+      <a href="/"><h6>無想設計</h6></a>
     </div>
     <p>frozenfung@gmail.com</p>
     <p>0920-272-378</p>
