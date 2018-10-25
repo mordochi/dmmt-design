@@ -87,7 +87,7 @@ function redDot() {
       { opacity: '0.1' }
     ], {
       // timing options
-      duration: 1500,
+      duration: 2000,
       iterations: Infinity
     });
 
@@ -97,7 +97,7 @@ function redDot() {
       { transform: 'scale(2)' }
     ], {
       // timing options
-      duration: 1500,
+      duration: 2000,
       iterations: Infinity
     });
 
@@ -107,8 +107,8 @@ function redDot() {
       { opacity: '0.1' }
     ], {
       // timing options
-      duration: 1500,
-      delay: 750,
+      duration: 2000,
+      delay: 1000,
       iterations: Infinity
     });
 
@@ -118,8 +118,8 @@ function redDot() {
       { transform: 'scale(2)' }
     ], {
       // timing options
-      duration: 1500,
-      delay: 750,
+      duration: 2000,
+      delay: 1000,
       iterations: Infinity
     });
   }
@@ -340,7 +340,7 @@ function showProject(type) {
     document.getElementById('web-zoom-in').style.transform="scale(25)";
     document.getElementById('web-zoom-in-inner').style.transform="translateY(100vh)";
   } else {
-    document.getElementById('app-zoom-in').style.transform="scale(110)";
+    document.getElementById('app-zoom-in').style.transform="scale(150)";
   }
 
   setTimeout(() => {
