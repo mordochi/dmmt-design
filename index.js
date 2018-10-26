@@ -299,6 +299,7 @@ function setHomeContent(json) {
   let serviceTitles = document.querySelectorAll('.service h2');
   let serviceDescs = document.querySelectorAll('.service p');
 
+  console.log(json);
   for(let i = 0; i < serviceTitles.length; i++) {
     serviceTitles[i].innerHTML = json.services[i].title;
   }
@@ -352,6 +353,7 @@ function showProject(type) {
 function setContent(page, id) {
   document.getElementById(id).innerHTML = sessionStorage.getItem(page + 'HTML');
   let storageJson = JSON.parse(sessionStorage.getItem(page + 'Json'));
+  console.log(page+'Json');
 
   if(page === "home") {
     getMediumLatestPost();
@@ -374,6 +376,7 @@ function setContent(page, id) {
 }
 
 function firstRequest(jsonUrl, url, id) {
+  console.log(jsonUrl);
   let jsonReq = new XMLHttpRequest();
   jsonReq.open('GET', jsonUrl);
   jsonReq.responseType = 'json';
@@ -386,12 +389,12 @@ function firstRequest(jsonUrl, url, id) {
     req.responseType = 'text';
     req.send();
     req.onload = () => {
-      if(url === './home.html') {
+      if(url === './pages/home.html') {
         sessionStorage.setItem('homeHTML', req.responseText);
         sessionStorage.setItem('homeJson', JSON.stringify(json));
 
         setContent('home', id);
-      } else if(url === './web.html') {
+      } else if(url === './pages/web.html') {
         sessionStorage.setItem('webHTML', req.responseText);
         sessionStorage.setItem('webJson', JSON.stringify(json));
 
@@ -409,7 +412,7 @@ function firstRequest(jsonUrl, url, id) {
 function loadHTML(url, id) {
   let jsonUrl;
 
-  if(url === './home.html') {
+  if(url === './pages/home.html') {
     jsonUrl = './content/home.json';
 
     if(sessionStorage.getItem('homeHTML') && sessionStorage.getItem('homeJson')) {
@@ -417,7 +420,7 @@ function loadHTML(url, id) {
     } else {
       firstRequest(jsonUrl, url, id);
     }
-  } else if(url === './web.html') {
+  } else if(url === './pages/web.html') {
     jsonUrl = './content/web/example.json';
 
     if(sessionStorage.getItem('webHTML') && sessionStorage.getItem('webJson')) {
@@ -448,13 +451,13 @@ let projectNum;
 
   router.on({
     '/project-web*': function () {
-      loadHTML('./web.html', 'view');
+      loadHTML('./pages/web.html', 'view');
     },
     '/project-app*': function () {
-      loadHTML('./app.html', 'view');
+      loadHTML('./pages/app.html', 'view');
     },
     '*': function () {
-      loadHTML('./home.html', 'view');
+      loadHTML('./pages/home.html', 'view');
     }
   }).resolve();
 
