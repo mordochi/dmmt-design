@@ -114,7 +114,7 @@ nav {
 
 #cover {
   padding: 0 12.5%;
-  height: 75vh;
+  height: 120vh;
   background-color: #fff;
   position: relative;
 }
@@ -128,7 +128,7 @@ nav {
 
 #cover > div {
   display: inline-block;
-  vertical-align: middle;
+  margin-top: 15vh;
 }
 
 #cover > div > img {
@@ -142,8 +142,8 @@ nav {
   letter-spacing: 5px;
 }
 
-#cover h3 {
-  font-size: 32px;
+#cover h5 {
+  font-size: 1.2em;
   font-weight: 100;
   color: #222222;
   letter-spacing: 4px;
@@ -170,8 +170,8 @@ nav {
   max-width: 695px;
   margin-right: 2vw;
   display: inline-block;
-  vertical-align: middle;
   position: relative;
+  margin-top: 25vh;
 }
 
 .cover-img .none {
@@ -1155,6 +1155,12 @@ nav {
 @media only screen and (max-width: 600px) {
   #cover {
     padding-top: 50px;
+    height: 100vh;
+  }
+
+  #cover div {
+    margin-top: 0;
+    margin-bottom: 10vh;
   }
 
   #cover:before {
