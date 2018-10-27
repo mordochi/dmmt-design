@@ -1,22 +1,22 @@
 [
   {
     "No": "01",
-    "name": "寄寓",
-    "intro": "形象網站",
+    "name": "寄寓形象官網",
+    "intro": "寄寓於去年成立，專營物業管理以及月租套房的品牌，致力於提供平價且有品質的房間給短期出差之商務人士，主打交通方便以及貼心服務。",
     "link": "https://goodlivingtaipei.com/",
-    "img": "./images/fakeImg.png",
+    "img": "./images/project-web/goodlivingtaipei.png",
     "content": [
       {
-        "paragraphTitle": "標題1",
-        "paragraphContent": "內容1"
+        "paragraphTitle": "專案階段1",
+        "paragraphContent": "透過問卷與閒聊，了解物業管理業背景與寄寓市場定位，接觸更多屋主與營運人手不足為目前最主要問題。"
       },
       {
-        "paragraphTitle": "標題2",
-        "paragraphContent": "內容2"
+        "paragraphTitle": "專案階段2",
+        "paragraphContent": "共同發想網站的內容，並依照屋主和房客會有興趣的方向收斂。風格提案和網站製作。"
       },
       {
-        "paragraphTitle": "標題3",
-        "paragraphContent": "內容3"
+        "paragraphTitle": "專案階段3",
+        "paragraphContent": "網站上線後行銷工具和未來合作方向討論，下一步也許是透過自動化解決日漸肥大的房間管理需求。"
       }
     ],
     "medium": {
@@ -26,21 +26,33 @@
     }
   },
   {
-   "No": "02",
-    "name": "name",
-    "intro": "intro",
-    "link": "https://goodlivingtaipei.com/",
-    "img": "./images/fakeImg.png",
+    "No": "02",
+    "name": "兩廳院事件簿：烈火中的帥哥警探",
+    "intro": "近年來兩廳院不斷進行跨界推廣活動的嘗試，今年打算透過遊戲包裝表演藝術，並將其推至更多年輕觀眾面前，讓遊戲帶著玩家思考表演藝術的製作內容與形式。整個專案由國家兩廳院發起，擅長議題遊戲化的聚樂邦製作遊戲企劃，音樂劇劇團躍演塑造遊戲角色以及撰寫遊戲劇情，無想設計執行遊戲開發。",
+    "link": "https://detective-h-on-fire.online",
+    "img": "./images/project-web/detective-h-on-fire.jpg",
     "content": [
       {
-        "paragraphTitle": "標題122",
-        "paragraphContent": "內容122"
+        "paragraphTitle": "專案階段1",
+        "paragraphContent": "討論遊戲情境與這次想玩的技術，並嘗試在遊戲體驗和場地限制中找出平衡點。確定遊戲流程。"
+      },
+      {
+        "paragraphTitle": "專案階段2",
+        "paragraphContent": "撰寫劇本與遊戲流程開發同時進行，實境遊戲場地接洽與實境遊戲設計。"
+      },
+      {
+        "paragraphTitle": "專案階段3",
+        "paragraphContent": "遊戲開發與系統整合，手遊遊戲測試以及實境遊戲測試。"
+      },
+      {
+        "paragraphTitle": "專案階段4",
+        "paragraphContent": "遊戲上線後系統持續優化，數據觀測後台建立。"
       }
     ],
     "medium": {
-      "img": "https://cdn-images-1.medium.com/max/2000/1*OAApwOxtoLuv7txXWkNBPQ.png",
-      "title": "medium",
-      "link": "https://medium.com/%E7%84%A1%E6%83%B3%E8%A8%AD%E8%A8%88/%E8%BC%95%E8%A3%9D%E6%BD%A2%E8%88%87%E8%B2%BC%E5%BF%83%E6%9C%8D%E5%8B%99-%E6%9C%88%E7%A7%9F%E5%B8%82%E5%A0%B4%E6%96%B0%E7%8E%A9%E5%AE%B6%E5%AF%84%E5%AF%93%E8%A6%81%E7%BF%BB%E8%BD%89%E5%B1%8B%E4%B8%BB%E6%88%BF%E5%AE%A2%E5%B0%8D%E7%AB%8B%E9%97%9C%E4%BF%82-c62b58b26536"
+      "img": "https://cdn-images-1.medium.com/max/2000/1*LdcSfl6oC5MVk5VjEJLXow.jpeg",
+      "title": "兩廳院事件簿：烈火中的帥哥警探・攜手遊戲推廣表演藝術",
+      "link": "https://medium.com/%E7%84%A1%E6%83%B3%E8%A8%AD%E8%A8%88/%E5%85%A9%E5%BB%B3%E9%99%A2%E4%BA%8B%E4%BB%B6%E7%B0%BF-%E7%83%88%E7%81%AB%E4%B8%AD%E7%9A%84%E5%B8%A5%E5%93%A5%E8%AD%A6%E6%8E%A2-%E6%94%9C%E6%89%8B%E9%81%8A%E6%88%B2%E6%8E%A8%E5%BB%A3%E8%A1%A8%E6%BC%94%E8%97%9D%E8%A1%93-55b13801189f"
     }
   }
 ]
