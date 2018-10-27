@@ -299,7 +299,6 @@ function setHomeContent(json) {
   let serviceTitles = document.querySelectorAll('.service h2');
   let serviceDescs = document.querySelectorAll('.service p');
 
-  console.log(json);
   for(let i = 0; i < serviceTitles.length; i++) {
     serviceTitles[i].innerHTML = json.services[i].title;
   }
@@ -353,7 +352,6 @@ function showProject(type) {
 function setContent(page, id) {
   document.getElementById(id).innerHTML = sessionStorage.getItem(page + 'HTML');
   let storageJson = JSON.parse(sessionStorage.getItem(page + 'Json'));
-  console.log(page+'Json');
 
   if(page === "home") {
     getMediumLatestPost();

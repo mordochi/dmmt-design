@@ -483,6 +483,7 @@ nav {
 
 .web > div, .app > div {
   position: relative;
+  cursor: pointer;
 }
 
 .web img {
@@ -719,8 +720,9 @@ nav {
 }
 
 .contact-info > img, .contact-info a > img {
-  width: 40px;
-  margin-right: 18px;
+  width: 30px;
+  margin-right: 5px;
+  margin-top: 20px;
 }
 
 .contact-form {
@@ -1354,7 +1356,7 @@ nav {
   }
 
   .service {
-    margin: 5vh auto 0;
+    margin: 15vh auto 0;
     padding: 7vh 0 0;
     position: relative;
   }
