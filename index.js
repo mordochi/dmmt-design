@@ -172,7 +172,7 @@ function showDot(scrollTop) {
   let dots3 = document.querySelectorAll('#dot-pack-3 div');
 
   for(let i = 0; i < dots1.length; i++) {
-    if(scrollTop > 0.26 * windowWidth + (13 * i)) {
+    if(scrollTop > 0.55 * windowWidth + (13 * i)) {
       dots1[i].style.setProperty('opacity', '1');
     } else {
       dots1[i].style.setProperty('opacity', '0');
@@ -180,7 +180,7 @@ function showDot(scrollTop) {
   }
 
   for(let i = 0; i < dots2.length; i++) {
-    if(scrollTop > 0.54 * windowWidth + (13 * i)) {
+    if(scrollTop > 0.89 * windowWidth + (13 * i)) {
       dots2[i].style.setProperty('opacity', '1');
     } else {
       dots2[i].style.setProperty('opacity', '0');
@@ -188,7 +188,7 @@ function showDot(scrollTop) {
   }
 
   for(let i = 0; i < dots3.length; i++) {
-    if(scrollTop > 0.81 * windowWidth + (13 * i)) {
+    if(scrollTop > 1.12 * windowWidth + (13 * i)) {
       dots3[i].style.setProperty('opacity', '1');
     } else {
       dots3[i].style.setProperty('opacity', '0');
