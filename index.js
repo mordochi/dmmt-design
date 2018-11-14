@@ -295,6 +295,31 @@ function setProjectContent(json, prefix) {
   }
 }
 
+function setAnotherProjectLink(projectId, projectNum, storageJson) {
+  if(projectId === 1) {
+    prevProjectId = projectNum;
+  } else {
+    prevProjectId = projectId - 1;
+  }
+
+  if(projectId === projectNum) {
+    nextProjectId = 1;
+  } else {
+    nextProjectId = projectId + 1;
+  }
+
+  if(projectId === 1 && prevProjectId === 1) {
+    document.getElementById('next-project').style.display = "none";
+    document.getElementById('prev-project').style.display = "none";
+  } else if (prevProjectId === nextProjectId) {
+    document.getElementById('prev-title').innerHTML = storageJson[prevProjectId - 1].name;
+    document.getElementById('next-project').style.display = "none";
+  } else {
+    document.getElementById('prev-title').innerHTML = storageJson[prevProjectId - 1].name;
+    document.getElementById('next-title').innerHTML = storageJson[nextProjectId - 1].name;
+  }
+}
+
 function setHomeContent(json) {
   let serviceTitles = document.querySelectorAll('.service h2');
   let serviceDescs = document.querySelectorAll('.service p');
@@ -360,6 +385,8 @@ function setContent(page, id) {
     projectId = Number(window.location.href.split("?id=")[1]);
     projectNum = storageJson.length;
     document.getElementById(page + '-intro').scrollIntoView();
+
+    setAnotherProjectLink(projectId, projectNum, storageJson)
     setProjectContent(storageJson[projectId - 1], (page + '-'));
   }
 
