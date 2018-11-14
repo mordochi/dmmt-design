@@ -365,7 +365,7 @@ function showProject(type) {
     document.getElementById('web-zoom-in').style.transform="scale(25)";
     document.getElementById('web-zoom-in-inner').style.transform="translateY(100vh)";
   } else {
-    document.getElementById('app-zoom-in').style.transform="scale(150)";
+    document.getElementById('app-zoom-in').style.width="17850px";
   }
 
   setTimeout(() => {

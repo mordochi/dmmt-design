@@ -516,16 +516,16 @@ nav {
 
 #app-zoom-in {
   position: absolute;
-  bottom: 1vw;
-  right: 6.5vw;
-
+  bottom: 5vw;
+  right: 10vw;
   width: 12vw;
+
   -ms-transition: all 1s ease-in-out;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
-  -ms-transform-origin: center center;
-  -webkit-transform-origin: center center;
-  transform-origin: 75% 75%;
+  -ms-transform: translate(25%,30%);
+  -webkit-transform: translate(25%,30%);
+  transform: translate(25%,30%);
 }
 
 .article img {
