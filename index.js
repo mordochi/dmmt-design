@@ -360,8 +360,10 @@ function showProject(type) {
   document.getElementsByClassName('article')[0].style.position="static";
 
   if(type === 'web') {
-    document.querySelectorAll('.app div')[0].style.position="static";
-    document.getElementById('app-zoom-in').style.position="static";
+    //蓋過右邊app的區塊
+    document.getElementById('web-zoom-in').style.zIndex="10";
+    document.getElementById('web-zoom-in-inner').style.zIndex="10";
+
     document.getElementById('web-zoom-in').style.transform="scale(25)";
     document.getElementById('web-zoom-in-inner').style.transform="translateY(100vh)";
   } else {
