@@ -229,8 +229,8 @@ function shrinkRedCover(prefix) {
   setTimeout(() => {
     document.getElementById('red-cover').style.top =`${offsetTop}px`;
     document.getElementById('red-cover').style.left =`${offsetLeft}px`;
-    document.getElementById('red-cover').style.width="0px";
-    document.getElementById('red-cover').style.height="0px";
+    document.getElementById('red-cover').style.transform="scale(0)";
+    document.getElementById('red-cover').style.transformOrigin="top left";
   }, 400);
 }
 
