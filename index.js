@@ -40,7 +40,7 @@ function submitForm () {
     xhr.open('POST', 'https://hooks.slack.com/services/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', true);
     xhr.onload = function () {
       // do something to response
-      console.log(this.responseText);
+      //console.log(this.responseText);
     };
     xhr.send(JSON.stringify(data));
 
@@ -392,8 +392,17 @@ function setContent(page, id) {
     projectNum = storageJson.length;
     document.getElementById(page + '-intro').scrollIntoView();
 
-    setAnotherProjectLink(projectId, projectNum, storageJson)
-    setProjectContent(storageJson[projectId - 1], (page + '-'));
+    setAnotherProjectLink(projectId, projectNum, storageJson);
+    if(Object.keys(storageJson[0]).length !== 1) {
+      setProjectContent(storageJson[projectId - 1], (page + '-'));
+    } else {
+      //如果尚未有專案
+      shrinkRedCover(page + '-');
+      document.getElementById('img').remove();
+      document.querySelector("a." + page + "-link").remove();
+      document.getElementById(page + '-content').remove();
+      document.getElementById('wait-for-it').innerHTML = storageJson[0].title;
+    }
   }
 
   redDot();
@@ -407,7 +416,7 @@ function setContent(page, id) {
 }
 
 function firstRequest(jsonUrl, url, id) {
-  console.log(jsonUrl);
+  //console.log(jsonUrl);
   let jsonReq = new XMLHttpRequest();
   jsonReq.open('GET', jsonUrl);
   jsonReq.responseType = 'json';

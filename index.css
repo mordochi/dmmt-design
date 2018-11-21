@@ -896,6 +896,10 @@ nav {
   margin-bottom: 24px;
 }
 
+#web-cover #wait-for-it, #app-cover #wait-for-it {
+  margin-left: 50px;
+}
+
 #web-cover a, #app-cover a, .medium a {
   width: 300px;
   height: 48px;
