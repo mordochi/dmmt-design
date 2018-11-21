@@ -336,6 +336,8 @@ function setHomeContent(json) {
 }
 
 function anotherProject(type, direction) {
+  document.getElementById('white-cover').className = 'white-to-red';
+
   let currentProjectId = Number(window.location.href.split("?id=")[1]);
 
   if(direction === "prev") {
@@ -352,7 +354,9 @@ function anotherProject(type, direction) {
     }
   }
 
-  router.navigate('/project-' + type + '?id=' + projectId);
+  setTimeout(() => {
+    router.navigate('/project-' + type + '?id=' + projectId);
+  }, 1000);
 }
 
 function showProject(type) {

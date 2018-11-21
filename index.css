@@ -787,6 +787,41 @@ nav {
 
 /*專案文章*/
 
+#white-cover {
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+#white-cover.white-to-red {
+  visibility: visible;
+
+  -ms-animation:  whiteToRed 1s ease-out;
+  -webkit-animation:  whiteToRed 1s ease-out;
+  animation:  whiteToRed 1s ease-out;
+}
+
+@keyframes whiteToRed {
+  0% {
+    opacity: 0;
+    background-color: #fff;
+  }
+
+  40% {
+    opacity: 0.95;
+    background-color: #fff;
+  }
+
+  100% {
+    opacity: 1;
+    background-color: #e95036;
+  }
+}
+
 #red-cover {
   width: 100vw;
   height: 100vh;
