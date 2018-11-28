@@ -377,7 +377,6 @@ function showProject(type) {
   setTimeout(() => {
     router.navigate('/project-' + type + '?id=1');
   }, 900);
-
 }
 
 function setContent(page, id) {
@@ -486,7 +485,7 @@ const router = new Navigo();
 let projectId;
 let projectNum;
 
-(function() {
+window.onload = function() {
   AOS.init();
 
   router.on({
@@ -510,5 +509,4 @@ let projectNum;
     fadeIt(scrollTop, farestPosition);
     showDot(scrollTop);
   });
-})();
-
+};
