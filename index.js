@@ -1,3 +1,11 @@
+function detectmob() {
+  if(window.innerWidth <= 1024 && window.innerHeight <= 1366) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function submitForm () {
   let inputs = document.getElementsByTagName('input');
   let textareas = document.getElementsByTagName('textarea');
@@ -404,7 +412,9 @@ function setContent(page, id) {
     }
   }
 
-  redDot();
+  if(!detectmob()) {
+    redDot();
+  }
 
   let images = document.getElementsByTagName('img');
   for(let i = 0; i < images.length; i++) {
