@@ -373,8 +373,8 @@ function showProject(type) {
 
   if(type === 'web') {
     //蓋過右邊app的區塊
-    document.getElementById('web-zoom-in').style.zIndex="10";
     document.getElementById('web-zoom-in-inner').style.zIndex="10";
+    document.getElementById('web-zoom-in').style.zIndex="10";
 
     document.getElementById('web-zoom-in').style.transform="scale(25)";
     document.getElementById('web-zoom-in-inner').style.transform="translateY(100vh)";
